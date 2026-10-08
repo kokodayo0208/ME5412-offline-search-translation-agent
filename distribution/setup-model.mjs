@@ -13,7 +13,19 @@ const cfg = JSON.parse(await fsp.readFile(path.join(root, 'model-release.json'),
 const target = path.join(root, 'data', 'models');
 const allowed = new Set(['api.github.com', 'github.com', 'objects.githubusercontent.com', 'release-assets.githubusercontent.com']);
 const safeUrl = raw => { const u = new URL(raw); if (u.protocol !== 'https:' || !allowed.has(u.hostname)) throw new Error(`refusing non-GitHub URL: ${u.hostname}`); return u; };
-const request = async raw => { const u = safeUrl(raw); const r = await fetch(u, { headers: { 'User-Agent': 'ME5412-portable-model-setup/1', Accept: 'application/vnd.github+json' }, redirect: 'follow' }); if (!r.ok) throw new Error(`${r.status} ${u}`); return r; };
+const request = async raw => {
+  let u = safeUrl(raw);
+  for (let hop = 0; hop < 8; hop++) {
+    const r = await fetch(u, { headers: { 'User-Agent': 'ME5412-portable-model-setup/1', Accept: 'application/vnd.github+json' }, redirect: 'manual' });
+    if (r.status >= 300 && r.status < 400) {
+      const location = r.headers.get('location'); if (!location) throw new Error(`redirect without location from ${u}`);
+      u = safeUrl(new URL(location, u).toString()); continue;
+    }
+    if (!r.ok) throw new Error(`${r.status} ${u}`);
+    return r;
+  }
+  throw new Error('too many GitHub redirects');
+};
 const digest = async file => { const h = crypto.createHash('sha256'); let size = 0; for await (const c of fs.createReadStream(file)) { h.update(c); size += c.length; } return { sha256: h.digest('hex'), size }; };
 const check = async (file, expected, label) => { const got = await digest(file); if (got.sha256 !== expected.sha256 || got.size !== Number(expected.size)) throw new Error(`${label} verification failed: ${got.sha256}/${got.size}`); };
 const manifestPath = process.argv[2];

@@ -9,8 +9,8 @@
 - 仓库：<https://github.com/kokodayo0208/ME5412-offline-search-translation-agent>
 - Release 标签：`offline-agent-windows-v1.0.0`
 - 便携 ZIP：[ME5412-portable-win-x64-2026-10-08.zip](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.0.0/ME5412-portable-win-x64-2026-10-08.zip)
-- 文件大小：1,938,371,197 bytes
-- SHA-256：`99E825E2899296423FB2F68E10B5C6BC9F9CD43AF84C7B04908FEAF649697E20`
+- 文件大小：1,938,370,813 bytes
+- SHA-256：`8F52C471F7609A521C6E01899D8DF2D55AB85438FFADF9DF362EC24DD9928161`
 
 无需 GitHub 账号。只从上述仓库的 Release 下载；不要为了 Node.js、Ollama、npm、模型或 PDF 访问其他网站。源码 ZIP 只包含源码，不是带 Node/Ollama runtime 的便携包。本次发布提供单个完整 ZIP，不需要分卷或 bootstrap 拼接。
 

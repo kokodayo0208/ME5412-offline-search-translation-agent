@@ -2,7 +2,7 @@
 
 这是一个面向 Windows 10/11 x64 的 ME5412 课件本地搜索、翻译与问答工具。推荐给普通用户的交付形式是 GitHub Release 中的便携 ZIP：Node.js、Ollama、所需运行库、许可证文件、应用、知识库和 11 份“笔记版课件”PDF 都由发布包提供。用户不需要单独安装 Node.js、Ollama、npm，也不需要访问其他网站下载依赖或模型。
 
-已确认的便携资产：[`ME5412-portable-win-x64-2026-10-08.zip`](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.0.0/ME5412-portable-win-x64-2026-10-08.zip)，大小 1,938,371,197 bytes，SHA-256 `99E825E2899296423FB2F68E10B5C6BC9F9CD43AF84C7B04908FEAF649697E20`。Release 标签为 `offline-agent-windows-v1.0.0`。
+已确认的便携资产：[`ME5412-portable-win-x64-2026-10-08.zip`](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.0.0/ME5412-portable-win-x64-2026-10-08.zip)，大小 1,938,370,813 bytes，SHA-256 `8F52C471F7609A521C6E01899D8DF2D55AB85438FFADF9DF362EC24DD9928161`。Release 标签为 `offline-agent-windows-v1.0.0`。
 
 ## 普通用户从哪里开始
 
