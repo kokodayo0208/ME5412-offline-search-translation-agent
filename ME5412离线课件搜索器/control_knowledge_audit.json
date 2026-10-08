@@ -1,0 +1,40 @@
+{
+  "auditedAt": "2026-10-06T08:00:00Z",
+  "scope": "FAST search and file-serving deployment audit only; no model Q&A or answer-key content.",
+  "index": {
+    "version": 4,
+    "files": 24,
+    "pages": 1262,
+    "notesFiles": 11,
+    "notesPages": 588,
+    "notesRootOnly": true
+  },
+  "deployment": {
+    "indexRebuiltAfterFinalSourceUpdate": true,
+    "appReloaded": true,
+    "ollamaRestarted": false,
+    "reload": "ME5412 Node listener 43720 -> 31008"
+  },
+  "sourceQueryResults": [
+    {"topic":"locomotion mode and gait phase","query":"locomotion mode m gait phase phi tau_des","source":"2.2 ME5412 Lower limb robotics.pdf","page":37,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"tau_des and current-to-torque path","query":"tau_des m phi tau_out I current torque mapping","source":"2.2 ME5412 Lower limb robotics.pdf","page":37,"found":true,"rank":2,"withinTop5":true},
+    {"topic":"mid-level gait controller","query":"mid-level gait phase segmentation assistive control","source":"2.2 ME5412 Lower limb robotics.pdf","page":39,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"low-level torque tracking","query":"low level torque control adaptive assistance q_d tau_e","source":"2.2 ME5412 Lower limb robotics.pdf","page":41,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"current I output mapping","query":"tau_out I current torque control","source":"2.2 ME5412 Lower limb robotics.pdf","page":37,"found":true,"rank":3,"withinTop5":true},
+    {"topic":"perturbation residual and adaptive threshold","query":"perturbation detection velocity residual adaptive threshold assistive trigger","source":"2.2 ME5412 Lower limb robotics.pdf","page":42,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"peak timing and normalized force","query":"peak timing peak force onset offset force N kg gait cycle","source":"2.2 ME5412 Lower limb robotics.pdf","page":34,"found":true,"rank":2,"withinTop5":true},
+    {"topic":"finite-state-machine gait control","query":"finite state machine weight acceptance middle stance terminal stance swing","source":"2.2 ME5412 Lower limb robotics.pdf","page":39,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"compliance / impedance / admittance","query":"compliance control impedance admittance J K D","source":"2.2 ME5412 Lower limb robotics.pdf","page":43,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"sEMG-driven control","query":"sEMG decoder calibration online LQR","source":"2.3. ME5412 Upper limb rehab robotics.pdf","page":52,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"assist-as-needed torque balance","query":"assist as needed T_assist T_muscle T_G torque balance","source":"2.3. ME5412 Upper limb rehab robotics.pdf","page":57,"found":true,"rank":1,"withinTop5":true},
+    {"topic":"upper-limb intention sensors","query":"upper limb high level control tactile IMU depth EMG EEG","source":"2.3. ME5412 Upper limb rehab robotics.pdf","page":49,"found":true,"rank":1,"withinTop5":true}
+  ],
+  "fileEndpointChecks": [
+    {"source":"2.2 ME5412 Lower limb robotics.pdf","status":200,"contentType":"application/pdf"},
+    {"source":"2.3. ME5412 Upper limb rehab robotics.pdf","status":200,"contentType":"application/pdf"}
+  ],
+  "additionalSourceChecks": [
+    {"topic":"upper-limb low-level torque control","query":"upper limb low level torque control PID gravity friction compensation admittance","source":"2.3. ME5412 Upper limb rehab robotics.pdf","page":51,"found":true,"rank":1,"withinTop5":true}
+  ],
+  "result":"12/12 knowledge-area sources plus the upper-limb torque-control source were returned by FAST search; the runtime exposes only files under the annotated-notes root."
+}

@@ -1,0 +1,981 @@
+{
+  "sourceRelativePath": "笔记版课件/2.1 ME5412 Stroke and Stroke Rehabilitation.pdf",
+  "sourceName": "2.1 ME5412 Stroke and Stroke Rehabilitation.pdf",
+  "pageCount": 63,
+  "pages": [
+    {
+      "number": 1,
+      "visualReviewed": true,
+      "slideTextSummary": "课程封面：Stroke and Stroke Rehabilitation",
+      "visualDescription": "NUS蓝底封面",
+      "notes": "手写：中风与中风康复",
+      "interpretation": "本讲围绕中风及康复机器人",
+      "keywords": [
+        "stroke",
+        "rehabilitation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 2,
+      "visualReviewed": true,
+      "slideTextSummary": "六节大纲：定义/流行病学、后果、恢复机制、临床评估、干预、机器人",
+      "visualDescription": "中英文两列对应",
+      "notes": "中文大纲为页面笔记",
+      "interpretation": "六节构成课程结构",
+      "keywords": [
+        "outline",
+        "epidemiology"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 3,
+      "visualReviewed": true,
+      "slideTextSummary": "Definition & Epidemiology章节页",
+      "visualDescription": "纯标题页",
+      "notes": "红色手写：中风的定义与流行病学",
+      "interpretation": "引入中风分类与负担",
+      "keywords": [
+        "stroke definition"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 4,
+      "visualReviewed": true,
+      "slideTextSummary": "Stroke (Animation)",
+      "visualDescription": "侧面脑血管解剖图，静态PDF仅一帧",
+      "notes": "手写：中风；旁注：大脑侧面血管解剖图",
+      "interpretation": "以血管图引入病理",
+      "keywords": [
+        "brain vasculature",
+        "animation"
+      ],
+      "uncertainties": [
+        "原动画动态内容不可见"
+      ]
+    },
+    {
+      "number": 5,
+      "visualReviewed": true,
+      "slideTextSummary": "每年约1500万人中风，500万死亡、500万永久残疾；展示地区负担",
+      "visualDescription": "全球死亡率地图、美国中风带热图、15M/5M/5M圆环、发病死亡柱图、成本折线图",
+      "notes": "手写：中风数据统计；中文写85%发生在中低收入国家及美国东南部负担；蓝字强调康复需求",
+      "interpretation": "不同年份/地区的统计不可当作当前同一口径数据",
+      "keywords": [
+        "stroke statistics",
+        "stroke belt",
+        "mortality"
+      ],
+      "uncertainties": [
+        "地图小字图例部分不清"
+      ]
+    },
+    {
+      "number": 6,
+      "visualReviewed": true,
+      "slideTextSummary": "2030年预计7000万幸存者；每年1600万新发；6个月后30–66%运动缺损；2010美国成本737亿美元",
+      "visualDescription": "四个图标与四组大数字，底部三条文献",
+      "notes": "手写：关键数字；中文逐项翻译",
+      "interpretation": "数字对应不同来源和时间",
+      "keywords": [
+        "70 million",
+        "16 million",
+        "30–66%",
+        "73.7 billion"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 7,
+      "visualReviewed": true,
+      "slideTextSummary": "定义中风、缺血性/出血性中风和无急性梗死的TIA",
+      "visualDescription": "脑部图连堵塞与破裂的血管截面",
+      "notes": "手写标堵、破、缺血性和出血性；中文解释TIA",
+      "interpretation": "堵塞减供血对应缺血；血管破裂对应出血",
+      "keywords": [
+        "ischemic",
+        "hemorrhagic",
+        "TIA"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 8,
+      "visualReviewed": true,
+      "slideTextSummary": "Consequences of Stroke章节页",
+      "visualDescription": "纯标题页",
+      "notes": "手写：中风的后果",
+      "interpretation": "引入功能障碍",
+      "keywords": [
+        "stroke consequences"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 9,
+      "visualReviewed": true,
+      "slideTextSummary": "病灶位置决定功能后果",
+      "visualDescription": "脑功能分区图与运动/感觉皮层homunculus；手脸口面积大",
+      "notes": "中文标Broca、Wernicke、运动/感觉、视觉皮层；蓝字写左脑损伤可致右偏瘫",
+      "interpretation": "病灶功能定位及对侧运动控制",
+      "keywords": [
+        "lesion location",
+        "Broca",
+        "Wernicke",
+        "homunculus"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 10,
+      "visualReviewed": true,
+      "slideTextSummary": "运动、认知理解、言语表达、视觉/空间注意障碍",
+      "visualDescription": "四项文字，关键英文下划线",
+      "notes": "手写：四大功能障碍；蓝字联系相关脑区",
+      "interpretation": "视野缺损与忽略症并非同义，需区分",
+      "keywords": [
+        "motor",
+        "cognitive",
+        "aphasia",
+        "neglect"
+      ],
+      "uncertainties": [
+        "课件把视野看不到与neglect并列"
+      ]
+    },
+    {
+      "number": 11,
+      "visualReviewed": true,
+      "slideTextSummary": "运动功能损伤分列为轻偏瘫（hemiparesis）、痉挛（spasticity）、痉挛性共同收缩（spastic co-contraction）及异常运动协同（abnormal motor synergies）。课件原文：共同收缩是在自主运动命令下不恰当地招募拮抗肌；异常协同是失去对选定肌群的独立控制，例子为试图向前伸手时，肩外展与肘屈曲不自主地伴随发生。",
+      "visualDescription": "本页为文字列表，无另附示意图；英文将spastic co-contraction置于Spasticity条目下，将Abnormal motor synergies另列为下一主条目。",
+      "notes": "红色手写标题：运动功能损伤。右侧中文笔记写：痉挛性共同收缩是自主指令触发了不该激活的拮抗肌；异常运动协同是失去对特定肌群的独立控制，例如想向前伸手，肩膀外展和肘屈曲不由自主一起发生。",
+      "interpretation": "区分判据：共同收缩（co-contraction）强调主动肌与拮抗肌在自主命令下同时被招募，常在同一关节形成相反方向的力矩；异常协同（abnormal synergy）强调本想独立控制的多个关节/肌群被迫耦合。仅看到肩外展伴随肘屈曲，按本页应归为异常运动协同，不能据此认定拮抗肌共同收缩。二者都可妨碍动作，但肌肉同时激活与跨关节动作耦合是不同的判断依据。",
+      "keywords": [
+        "hemiparesis",
+        "spasticity",
+        "motor synergy",
+        "spastic co-contraction",
+        "abnormal motor synergies",
+        "antagonist recruitment",
+        "shoulder abduction",
+        "elbow flexion",
+        "拮抗肌共同收缩",
+        "跨关节异常协同"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 12,
+      "visualReviewed": true,
+      "slideTextSummary": "Stroke Recovery Mechanism章节页",
+      "visualDescription": "纯标题页",
+      "notes": "手写：中风恢复机制",
+      "interpretation": "引入神经可塑性",
+      "keywords": [
+        "recovery mechanism"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 13,
+      "visualReviewed": true,
+      "slideTextSummary": "课件列10%在8–12周自发恢复、10%无显著恢复、80%受益于强化康复",
+      "visualDescription": "三项比例大字",
+      "notes": "蓝字概括10%自己好、10%好不了、80%需训练",
+      "interpretation": "是课件概括而非个体预后",
+      "keywords": [
+        "spontaneous recovery",
+        "intensive rehabilitation"
+      ],
+      "uncertainties": [
+        "未给比例的直接来源"
+      ]
+    },
+    {
+      "number": 14,
+      "visualReviewed": true,
+      "slideTextSummary": "自发恢复涉及轴突/树突侧支出芽；可塑性涉及通路和突触重连",
+      "visualDescription": "文字层级",
+      "notes": "手写：中风恢复机制；中文解释康复促进可塑性",
+      "interpretation": "训练可利用神经重组促进功能",
+      "keywords": [
+        "collateral sprouting",
+        "neuroplasticity",
+        "synapse"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 15,
+      "visualReviewed": true,
+      "slideTextSummary": "可塑性定义；CVA/TBI/SCI后变化可由脑成像和动物模型研究",
+      "visualDescription": "定义与研究方法列表",
+      "notes": "手写：神经可塑性；蓝字用终身重新布线作比喻",
+      "interpretation": "持续变化构成康复训练的机制基础",
+      "keywords": [
+        "neuroplasticity",
+        "CVA",
+        "TBI",
+        "SCI"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 16,
+      "visualReviewed": true,
+      "slideTextSummary": "未使用运动区经刺激也可生成上肢动作；同一运动由不同脑区激活",
+      "visualDescription": "四幅脑成像，两列Finger zigzag/Finger sign",
+      "notes": "手写：神经可塑性研究；中文解释多区域激活",
+      "interpretation": "多区域表征提示运动输出组织有灵活性",
+      "keywords": [
+        "motor cortex",
+        "finger zigzag",
+        "finger sign"
+      ],
+      "uncertainties": [
+        "成像无色标/样本，不能推断激活量"
+      ]
+    },
+    {
+      "number": 17,
+      "visualReviewed": true,
+      "slideTextSummary": "训练可能激活未损脑区；可塑性原则：时机、任务特异性、一致性、强度重复、动机参与、反馈",
+      "visualDescription": "五项原则，中文黄底高亮",
+      "notes": "手写：利用原则；中文逐项翻译",
+      "interpretation": "这些原则用于设计训练",
+      "keywords": [
+        "timing",
+        "task-specific",
+        "intensity",
+        "motivation",
+        "feedback"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 18,
+      "visualReviewed": true,
+      "slideTextSummary": "习得性废用及CIMT：约束健侧上肢促使用患侧",
+      "visualDescription": "文字说明",
+      "notes": "手写：习得性废用；蓝字用好手与患手解释行为循环",
+      "interpretation": "CIMT改变回避患侧的使用习惯",
+      "keywords": [
+        "learned nonuse",
+        "CIMT"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 19,
+      "visualReviewed": true,
+      "slideTextSummary": "动物研究中活动与丰富环境促进皮层表征和恢复，缺乏训练延迟恢复",
+      "visualDescription": "丰富环境笼有滚轮玩具和多只鼠，对照贫乏环境笼",
+      "notes": "手写：用进废退；中文解释对比",
+      "interpretation": "动物实验示例支持活动与刺激的重要性",
+      "keywords": [
+        "enriched environment",
+        "cortical representation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 20,
+      "visualReviewed": true,
+      "slideTextSummary": "课件主张早期治疗窗口，尽早挑战较高阶任务",
+      "visualDescription": "The Earlier the Better红字；中文时间窗黄底",
+      "notes": "手写：治疗时机、越早越好",
+      "interpretation": "具体开始时点仍依患者稳定性",
+      "keywords": [
+        "timing of therapy",
+        "early rehabilitation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 21,
+      "visualReviewed": true,
+      "slideTextSummary": "强化训练与更大脑重组和更好结局相关",
+      "visualDescription": "More is Better红字；中文重点黄底",
+      "notes": "手写：治疗强度的作用、越多越好",
+      "interpretation": "强调剂量，但未给最佳安全剂量",
+      "keywords": [
+        "therapy intensity",
+        "brain reorganization"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 22,
+      "visualReviewed": true,
+      "slideTextSummary": "有意义的任务引起更大皮层重组；单纯重复不足",
+      "visualDescription": "滑雪和网球人物图",
+      "notes": "手写：中风康复必须是任务特异性的；蓝字举拿杯、开门、走路",
+      "interpretation": "训练应面向真实生活任务",
+      "keywords": [
+        "task-specific",
+        "meaningful tasks"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 23,
+      "visualReviewed": true,
+      "slideTextSummary": "传统治疗日：>50%卧床、28%坐床外、13%治疗活动、60%独处",
+      "visualDescription": "四组粗体比例和橙色结论",
+      "notes": "手写：不活动与孤独；蓝字认为需增加训练量",
+      "interpretation": "独处与姿势活动是不同维度，比例不可相加",
+      "keywords": [
+        "inactive and alone",
+        "13%",
+        "Bernhardt"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 24,
+      "visualReviewed": true,
+      "slideTextSummary": "Clinical Practices and Assessment章节页",
+      "visualDescription": "纯标题页",
+      "notes": "手写：中风康复的临床实践与评估",
+      "interpretation": "引入多学科及测量",
+      "keywords": [
+        "clinical practice",
+        "assessment"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 25,
+      "visualReviewed": true,
+      "slideTextSummary": "卒中后目标为早期康复、并发症管理、功能恢复和社会回归",
+      "visualDescription": "三个相交圆：early rehab、complication management、restitution",
+      "notes": "手写：中风后康复的目标；中文译注",
+      "interpretation": "安全、功能和参与目标相互关联",
+      "keywords": [
+        "early rehabilitation",
+        "complication management",
+        "restitution"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 26,
+      "visualReviewed": true,
+      "slideTextSummary": "身体、情绪、社会及治疗因素影响康复；多专业团队协作",
+      "visualDescription": "患者居中，家庭、医生、护士、PT、OT、言语治疗师、社工、心理师围绕",
+      "notes": "手写：团队协作及各角色中文",
+      "interpretation": "患者和家庭也处于协作体系中",
+      "keywords": [
+        "teamwork",
+        "OT",
+        "PT",
+        "speech pathology"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 27,
+      "visualReviewed": true,
+      "slideTextSummary": "OT以作业活动促进健康；PT发展和恢复运动/功能",
+      "visualDescription": "左右定义及厨房活动与步行训练照片",
+      "notes": "手写：作业治疗vs物理治疗；蓝字举日常活动和运动能力",
+      "interpretation": "两者侧重不同但有交叉",
+      "keywords": [
+        "occupational therapy",
+        "physical therapy"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 28,
+      "visualReviewed": true,
+      "slideTextSummary": "评估包括运动、感觉、知觉、认知、ADL、语言、心理和社会互动",
+      "visualDescription": "两列条目，部分中文高亮",
+      "notes": "手写：评估；中文细列痉挛、肌力、协调等",
+      "interpretation": "评估不限于肌力",
+      "keywords": [
+        "evaluation",
+        "neglect",
+        "ADL",
+        "cognition"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 29,
+      "visualReviewed": true,
+      "slideTextSummary": "循证康复整合临床专业知识、研究证据、患者价值偏好",
+      "visualDescription": "左侧EBP三箭头；右侧提问到再评估六步闭环",
+      "notes": "手写：循证实践；中文解释三要素及六步",
+      "interpretation": "临床决策应循环更新",
+      "keywords": [
+        "EBP",
+        "critical appraisal"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 30,
+      "visualReviewed": true,
+      "slideTextSummary": "运动学习区分获得即时效果、保持短长期效果和新任务迁移",
+      "visualDescription": "三阶段列表",
+      "notes": "手写：中风后运动康复—运动学习；中文译注",
+      "interpretation": "即时表现不等于长期保持与泛化",
+      "keywords": [
+        "motor learning",
+        "acquisition",
+        "retention",
+        "transfer"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 31,
+      "visualReviewed": true,
+      "slideTextSummary": "课件列80%独立移动、70%个人护理、40%出门、30%工作",
+      "visualDescription": "四个比例的中英文对照",
+      "notes": "手写：中风康复结果；蓝字说高级功能比例较低",
+      "interpretation": "不是个体预测",
+      "keywords": [
+        "rehabilitation outcomes",
+        "independent mobility",
+        "work"
+      ],
+      "uncertainties": [
+        "比例队列与随访期未列"
+      ]
+    },
+    {
+      "number": 32,
+      "visualReviewed": true,
+      "slideTextSummary": "影响结局的七因素：神经缺损、动机、学习、情绪社会支持、应对、合并症、训练",
+      "visualDescription": "七项中英文对照",
+      "notes": "手写：影响康复结果的因素",
+      "interpretation": "患者状态与环境共同作用",
+      "keywords": [
+        "motivation",
+        "comorbidities",
+        "social support"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 33,
+      "visualReviewed": true,
+      "slideTextSummary": "上下肢通用量表FMA、MAS、RMA、CMSA、MCA、MI、STREAM",
+      "visualDescription": "英文缩写与中文译名列表",
+      "notes": "手写：运动功能评估量表；中文称FMA最常用",
+      "interpretation": "此页无评分细则",
+      "keywords": [
+        "FMA",
+        "MAS",
+        "RMA",
+        "CMSA",
+        "MCA",
+        "MI",
+        "STREAM"
+      ],
+      "uncertainties": [
+        "MCA英文名称课件写Motor Club Assessment，未核标准名称"
+      ]
+    },
+    {
+      "number": 34,
+      "visualReviewed": true,
+      "slideTextSummary": "Stroke Rehabilitation Interventions章节页",
+      "visualDescription": "纯标题页",
+      "notes": "手写：中风康复干预手段",
+      "interpretation": "引入训练方式",
+      "keywords": [
+        "rehabilitation interventions"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 35,
+      "visualReviewed": true,
+      "slideTextSummary": "急/亚急性ROM、体位、ADL、痉挛管理；慢性任务训练；社区家居适配和持续计划",
+      "visualDescription": "三阶段方框箭头与辅助步行、减重跑台照片",
+      "notes": "手写：运动功能康复流程；中文逐阶段翻译",
+      "interpretation": "康复跨急性到社区连续进行",
+      "keywords": [
+        "acute",
+        "subacute",
+        "chronic",
+        "community",
+        "ADL"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 36,
+      "visualReviewed": true,
+      "slideTextSummary": "卒中后异常步态：躯干代偿、慢且不对称、画圈、患腿承重少、足下垂等",
+      "visualDescription": "患者扶杖步行照片",
+      "notes": "手写：中风后异常步态；中文逐项译注",
+      "interpretation": "清摆困难可伴代偿动作",
+      "keywords": [
+        "circumduction",
+        "foot drop",
+        "gait asymmetry"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 37,
+      "visualReviewed": true,
+      "slideTextSummary": "步态康复关注躯干、平衡、运动控制、力量爆发力耐力与独立行走",
+      "visualDescription": "治疗师辅助双杠行走照片",
+      "notes": "手写：步态康复目标；中文译注",
+      "interpretation": "独立步行依赖多个子能力",
+      "keywords": [
+        "gait rehabilitation",
+        "balance",
+        "ambulation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 38,
+      "visualReviewed": true,
+      "slideTextSummary": "传统方法：ROM、神经发育技术、ADL、平衡、地面行走、痉挛管理/夹板",
+      "visualDescription": "六宫格照片对应六方法",
+      "notes": "手写：传统步态康复；每图中文标注",
+      "interpretation": "方法覆盖身体准备、任务和症状管理",
+      "keywords": [
+        "ROM",
+        "ADL",
+        "balance training",
+        "overground gait"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 39,
+      "visualReviewed": true,
+      "slideTextSummary": "课件列传统治疗局限：进展难追踪、反馈不足、帮助不一致、人力密集、非定量评估",
+      "visualDescription": "两张人工辅助步行照片；红圈标接触支撑位置",
+      "notes": "手写：传统方法的局限；蓝字联至机器人介入",
+      "interpretation": "为机器人训练的剂量和测量优势铺垫",
+      "keywords": [
+        "feedback",
+        "therapist burden",
+        "quantitative assessment"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 40,
+      "visualReviewed": true,
+      "slideTextSummary": "行走康复组成：平衡评估训练、FES、BWS步态与跑台训练",
+      "visualDescription": "四条项目及中文对照",
+      "notes": "手写：行走康复治疗",
+      "interpretation": "是后续技术页的目录",
+      "keywords": [
+        "locomotion",
+        "FES",
+        "BWS",
+        "treadmill"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 41,
+      "visualReviewed": true,
+      "slideTextSummary": "综合流程：平衡评估→训练、传统ES→FES、BWS→跑台、地面行走汇入改善行走",
+      "visualDescription": "三行及地面行走的汇流流程图；右列平衡、神经肌肉、步态力学",
+      "notes": "红色手写各节点中文和改善行走",
+      "interpretation": "流程表达多训练域并行支撑步行",
+      "keywords": [
+        "balance assessment",
+        "FES",
+        "BWS",
+        "over-land gait"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 42,
+      "visualReviewed": true,
+      "slideTextSummary": "平衡训练可评估前置与过渡动作、重训缺陷、支持循证训练",
+      "visualDescription": "Balance Master平台、显示器和受试者照片",
+      "notes": "手写：平衡测试系统；中文译三用途",
+      "interpretation": "评估结果用于针对性练习",
+      "keywords": [
+        "Balance Master",
+        "balance training"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 43,
+      "visualReviewed": true,
+      "slideTextSummary": "电刺激分感觉和肌肉刺激；TENS 80–100Hz、低频1–5Hz、NMES 10–50Hz；FES促肌肉收缩",
+      "visualDescription": "多层文字列表",
+      "notes": "手写：功能性电刺激；中文标分类和频段",
+      "interpretation": "频段是课件示例，不是个人处方",
+      "keywords": [
+        "FES",
+        "TENS",
+        "NMES",
+        "80–100Hz",
+        "10–50Hz"
+      ],
+      "uncertainties": [
+        "英文把NMES误拼NEMS"
+      ]
+    },
+    {
+      "number": 44,
+      "visualReviewed": true,
+      "slideTextSummary": "课件概述FES对上肢手功能/独立性及下肢步行/痉挛等可能有效",
+      "visualDescription": "上/下肢双列与治疗师操作前臂电极照片",
+      "notes": "手写：FES的证据；中文逐项译注",
+      "interpretation": "该页未给效应量和研究等级",
+      "keywords": [
+        "FES evidence",
+        "upper limb",
+        "lower limb"
+      ],
+      "uncertainties": [
+        "证据来源未逐项标注"
+      ]
+    },
+    {
+      "number": 45,
+      "visualReviewed": true,
+      "slideTextSummary": "Bioness L300有微型步态传感器和无线控制，可促步态流畅与速度",
+      "visualDescription": "小腿绑缚装置和鞋部传感位置照片",
+      "notes": "手写：下肢FES；中文译组成和作用",
+      "interpretation": "可依步态时相触发辅助",
+      "keywords": [
+        "Bioness L300",
+        "gait sensor"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 46,
+      "visualReviewed": true,
+      "slideTextSummary": "Bioness L300 Plus系统概览标题",
+      "visualDescription": "仅Bioness商标，没有系统细节",
+      "notes": "顶部中文写系统概览",
+      "interpretation": "仅适合作设备名称入口",
+      "keywords": [
+        "Bioness L300 Plus"
+      ],
+      "uncertainties": [
+        "原嵌入内容可能缺失"
+      ]
+    },
+    {
+      "number": 47,
+      "visualReviewed": true,
+      "slideTextSummary": "BWS减重支撑减少患者用力、增加训练强度、改善姿势重训",
+      "visualDescription": "LiteGait吊带架与跑步机训练照片",
+      "notes": "手写：减重支撑训练；中文译优点",
+      "interpretation": "吊带允许支持下重复步行",
+      "keywords": [
+        "BWS",
+        "LiteGait",
+        "treadmill"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 48,
+      "visualReviewed": true,
+      "slideTextSummary": "卒中后上肢障碍：无力、感觉丧失、疼痛、痉挛、异常协同",
+      "visualDescription": "患者坐桌前试抓罐子的视频静帧",
+      "notes": "中文指出抓罐动作笨拙并译五项",
+      "interpretation": "功能性抓取可暴露多个障碍",
+      "keywords": [
+        "upper limb impairment",
+        "grasping"
+      ],
+      "uncertainties": [
+        "静帧无法评价完整动作"
+      ]
+    },
+    {
+      "number": 49,
+      "visualReviewed": true,
+      "slideTextSummary": "上肢康复目标：预防制动/软瘫/肩半脱位，改善运动感觉，回归家庭社区",
+      "visualDescription": "治疗师指导上肢与厨房水果操作两图",
+      "notes": "手写：上肢康复目标；中文译注",
+      "interpretation": "兼顾组织保护和生活参与",
+      "keywords": [
+        "upper limb rehabilitation",
+        "shoulder subluxation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 50,
+      "visualReviewed": true,
+      "slideTextSummary": "上肢功能恢复组成：组织保护、近端重复刺激、远端主动促进、FES",
+      "visualDescription": "四项列表",
+      "notes": "手写：上肢功能恢复关键组成；中文译注",
+      "interpretation": "结合保护、控制训练和电刺激",
+      "keywords": [
+        "proximal control",
+        "distal control",
+        "FES"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 51,
+      "visualReviewed": true,
+      "slideTextSummary": "手臂恢复流程含肩保护、腕手准备、远端活动、FES/SAEBO、近端机器人、REO和ADL使用",
+      "visualDescription": "多行流程汇入Improve Arm Function黄色椭圆",
+      "notes": "手写：准备保护、神经肌肉功能、改善手臂功能；各节点中文",
+      "interpretation": "展示多种通路，不表明效果大小",
+      "keywords": [
+        "arm recovery",
+        "SAEBO",
+        "REO",
+        "ADL"
+      ],
+      "uncertainties": [
+        "REO在本页未展开"
+      ]
+    },
+    {
+      "number": 52,
+      "visualReviewed": true,
+      "slideTextSummary": "GivMohr Sling用于减轻肩半脱位与疼痛、提供上肢支持",
+      "visualDescription": "黑色上肢吊带照片，治疗师调整腕部",
+      "notes": "手写：准备与保护、吊带；左侧中文译注",
+      "interpretation": "属于保护性辅助具",
+      "keywords": [
+        "GivMohr Sling",
+        "shoulder subluxation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 53,
+      "visualReviewed": true,
+      "slideTextSummary": "SAEBOstretch针对长指屈肌短缩，用低负荷长时间伸展",
+      "visualDescription": "手和前臂穿戴伸展支具照片",
+      "notes": "顶部中文逐项译注",
+      "interpretation": "主要用于手部姿势和软组织准备",
+      "keywords": [
+        "SAEBOstretch",
+        "finger flexors"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 54,
+      "visualReviewed": true,
+      "slideTextSummary": "SaeboFlex以弹簧辅助抓握后伸指/松手，纯机械非电动",
+      "visualDescription": "佩戴蓝色支具抓球，拉线弹簧机构可见",
+      "notes": "手写：动态手部矫形器；中文列弹簧、释放、非电动",
+      "interpretation": "辅助松手而非电刺激",
+      "keywords": [
+        "SaeboFlex",
+        "dynamic hand orthosis",
+        "grasp release"
+      ],
+      "uncertainties": [
+        "小字构件标注部分不清"
+      ]
+    },
+    {
+      "number": 55,
+      "visualReviewed": true,
+      "slideTextSummary": "Bioness H200可作ADL功能辅助的神经假肢，也可作训练装置",
+      "visualDescription": "白色手臂装置辅助抓杯照片",
+      "notes": "手写：上肢FES；中文区分功能辅助和治疗",
+      "interpretation": "同一装置有补偿与训练用途",
+      "keywords": [
+        "Bioness H200",
+        "neuroprosthesis",
+        "ADL"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 56,
+      "visualReviewed": true,
+      "slideTextSummary": "Emerging Solutions章节页",
+      "visualDescription": "纯标题页",
+      "notes": "手写：中风康复的新兴解决方案",
+      "interpretation": "转入VR、节律、机器人",
+      "keywords": [
+        "emerging solutions"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 57,
+      "visualReviewed": true,
+      "slideTextSummary": "VR是计算机感官刺激构成并受参与者动作影响的人工环境",
+      "visualDescription": "吊带保护下在跑台行走，CAVE投影虚拟林间小路",
+      "notes": "手写：虚拟现实；中文描述CAVE",
+      "interpretation": "交互情境可用于步态练习",
+      "keywords": [
+        "VR",
+        "CAVE",
+        "virtual reality"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 58,
+      "visualReviewed": true,
+      "slideTextSummary": "课件称VR对上肢/日常功能有益；下肢对步速无显著效果，但加常规治疗可改善平衡步态",
+      "visualDescription": "双列证据；手部VR与虚拟行走照片",
+      "notes": "手写：VR的证据；中文提患者特征、参与度和随访",
+      "interpretation": "区分单独VR步速与联合治疗结果",
+      "keywords": [
+        "VR evidence",
+        "gait speed",
+        "balance"
+      ],
+      "uncertainties": [
+        "无具体样本/效应量"
+      ]
+    },
+    {
+      "number": 59,
+      "visualReviewed": true,
+      "slideTextSummary": "Interactive Metronome：耳机参考音，手脚动作匹配节拍，毫秒反馈及记录分数",
+      "visualDescription": "五项文字，无设备照片",
+      "notes": "手写：节律性治疗—交互式节拍器；中文译注",
+      "interpretation": "以节律同步和即时反馈训练",
+      "keywords": [
+        "Interactive Metronome",
+        "rhythmic therapy"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 60,
+      "visualReviewed": true,
+      "slideTextSummary": "课件提出节拍器作用于脑内计时、节律、同步和注意/规划/序列能力",
+      "visualDescription": "四项机制文字",
+      "notes": "手写：交互式节拍器机制、步态训练与音乐辅助治疗；中文译注",
+      "interpretation": "是机制主张，并非该页的疗效数据",
+      "keywords": [
+        "brain timing",
+        "motor planning",
+        "sequencing"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 61,
+      "visualReviewed": true,
+      "slideTextSummary": "机器人辅助治疗促进恢复或补偿；分末端执行器和外骨骼、上肢和下肢",
+      "visualDescription": "四张设备照片：上肢末端、上肢外骨骼、下肢步行设备和跑台外骨骼",
+      "notes": "手写：机器人辅助治疗；中文译分类",
+      "interpretation": "结构分类与肢体应用是两条维度",
+      "keywords": [
+        "robot-assisted therapy",
+        "end-effector",
+        "exoskeleton",
+        "Lokomat"
+      ],
+      "uncertainties": [
+        "下排中文标签与图像形态可能错位"
+      ]
+    },
+    {
+      "number": 62,
+      "visualReviewed": true,
+      "slideTextSummary": "机器人优点：高剂量强度、一致性、减轻治疗师负担、定量评估",
+      "visualDescription": "四条大号编号文字",
+      "notes": "手写：机器人技术对中风的好处；蓝字对应传统治疗痛点",
+      "interpretation": "这些是潜在技术优势，具体疗效需分设备与任务评估",
+      "keywords": [
+        "robotics benefits",
+        "high intensity",
+        "quantitative evaluation"
+      ],
+      "uncertainties": []
+    },
+    {
+      "number": 63,
+      "visualReviewed": true,
+      "slideTextSummary": "六节总结：定义、后果、恢复、临床评估、干预、机器人",
+      "visualDescription": "中英文大纲，最后机器人项红色",
+      "notes": "右侧中文对照",
+      "interpretation": "结束并强调机器人主题",
+      "keywords": [
+        "stroke rehabilitation summary",
+        "robotics"
+      ],
+      "uncertainties": []
+    }
+  ],
+  "reviewedPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ]
+}
