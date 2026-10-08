@@ -63,7 +63,9 @@ The application uses local `127.0.0.1` services. After first-time setup, normal 
 
 ## Verification status
 
-The v1.2.0 package was validated end to end from a clean GitHub download: the ZIP SHA-256 matched the published checksum (`5207c618b58861917562dccc15b2bb129dd0af11c8a491df97ab75e6e9f754b4`), extraction succeeded, `setup-model.cmd` restored and verified the single `qwen3:8b` model, and application startup, course search, source-page preview, answer generation, offline translation, and PDF preview were all tested successfully. The model was confirmed running on the GPU (about 4.2 GB VRAM at a 4096 context). This record comes from one specific computer; it is not a universal hardware guarantee.
+The v1.2.0 package was validated end to end from a clean GitHub download: the ZIP SHA-256 matched the published checksum, extraction succeeded, `setup-model.cmd` restored and verified the single `qwen3:8b` model, and application startup, course search, source-page preview, answer generation, offline translation, and PDF preview were all tested successfully. The model was confirmed running on the GPU (about 4.2 GB VRAM at a 4096 context).
+
+The current release is **v1.2.1**. It is the same validated package with a single change: `app/app.html` carries the offline-translation layout fix described above. Its published SHA-256 is `b65eb0d46d1b354c1b891cd227992f914d79c43e26b45784a68328f04c09433d` for `ME5412-offline-agent-win-x64-v1.2.1.zip`, and it is also published as a separate `.sha256` asset next to the ZIP. Every other entry in the archive is byte-identical to the validated v1.2.0 package. These records come from one specific computer; they are not a universal hardware guarantee.
 
 ## Copyright and non-commercial restriction
 
