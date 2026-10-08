@@ -1,0 +1,123 @@
+{
+  "source": "ME5412 2. Mobility aids.pdf, smart-wheelchair sensor slides/pages 37-38, corroborated by indexed visual supplements",
+  "note": "Evaluation-only extensions of Q25. These do not alter canonical V25 or product runtime.",
+  "variants": [
+    {
+      "id": "S25-01",
+      "mode": "single",
+      "question": "A smart wheelchair needs a sensor that scans the environment over a wide horizontal angle to support obstacle avoidance. Which named course sensor best matches this role?",
+      "options": [
+        "A. Laser range finder",
+        "B. Force sensor",
+        "C. EMG sensor",
+        "D. Hall-effect sensor"
+      ],
+      "answer": [
+        "A"
+      ],
+      "evidence": "Laser range finder provides a 180-degree scan; force sensors are discussed in rehabilitation-robot sensing, not as the named smart-wheelchair example."
+    },
+    {
+      "id": "S25-02",
+      "mode": "single",
+      "question": "Which smart-wheelchair sensor captures both an image and depth information for environmental perception?",
+      "options": [
+        "A. Wheelchair encoder",
+        "B. Stereovision camera",
+        "C. Force sensor",
+        "D. GPS receiver"
+      ],
+      "answer": [
+        "B"
+      ],
+      "evidence": "The slide describes stereovision camera as capturing image and depth."
+    },
+    {
+      "id": "S25-03",
+      "mode": "single",
+      "question": "Microsoft Kinect is used in the course as an example of which sensing approach for a smart wheelchair?",
+      "options": [
+        "A. Structured light",
+        "B. Pneumatic sensing",
+        "C. Hall-effect sensing",
+        "D. Muscle-force sensing"
+      ],
+      "answer": [
+        "A"
+      ],
+      "evidence": "The slide names structured light, such as Microsoft Kinect."
+    },
+    {
+      "id": "S25-04",
+      "mode": "single",
+      "question": "A wheelchair bumper makes contact with an obstacle and reports that contact. Which course term describes this sensor, and what must it not be confused with?",
+      "options": [
+        "A. BUMP tactile sensor; it is not the same as a force sensor",
+        "B. Force sensor; it is identical to every force sensor",
+        "C. GPS; it is a position sensor",
+        "D. IMU; it measures acceleration and gyroscope data"
+      ],
+      "answer": [
+        "A"
+      ],
+      "evidence": "The slide names BUMP tactile sensing. The course supplement distinguishes contact/bump sensing from force sensors used in rehabilitation-robot sensor fusion."
+    },
+    {
+      "id": "S25-05",
+      "mode": "single",
+      "question": "Which sensor estimates wheel rotation or traveled distance on the smart wheelchair itself?",
+      "options": [
+        "A. Encoder",
+        "B. Structured-light camera",
+        "C. Ultrasound sonar",
+        "D. Force sensor"
+      ],
+      "answer": [
+        "A"
+      ],
+      "evidence": "Wheelchair encoders are explicitly named in the smart-wheelchair sensor slide."
+    },
+    {
+      "id": "S25-06",
+      "mode": "single",
+      "question": "Which named sensor is most directly associated with global positioning rather than local obstacle contact?",
+      "options": [
+        "A. BUMP tactile sensor",
+        "B. GPS",
+        "C. Force sensor",
+        "D. IMU only"
+      ],
+      "answer": [
+        "B"
+      ],
+      "evidence": "GPS is explicitly named as a smart-wheelchair sensor and supplies global positioning; BUMP is contact sensing."
+    },
+    {
+      "id": "S25-07",
+      "mode": "multi",
+      "question": "Select all sensor examples explicitly named on the smart-wheelchair sensor slides. (Multiple answers.)",
+      "options": [
+        "A. Ultrasonic/sonar",
+        "B. Laser range finder",
+        "C. Stereovision camera",
+        "D. Structured light such as Kinect",
+        "E. BUMP tactile sensor",
+        "F. Wheelchair encoder",
+        "G. IMU",
+        "H. GPS",
+        "I. Force sensor"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "evidence": "The slide list includes ultrasonic/sonar, infrared, laser range finder, stereovision, structured light/Kinect, BUMP tactile, encoders, IMU and GPS. Force sensor is not the BUMP/tactile category and is not selected in this smart-wheelchair list."
+    }
+  ]
+}
