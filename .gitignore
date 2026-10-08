@@ -37,3 +37,6 @@ tmp_validation/
 Thumbs.db
 .DS_Store
 *.swp
+
+# Course originals kept locally at repository root.
+/*.pdf
