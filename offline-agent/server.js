@@ -4,7 +4,7 @@ const http=require('http'),fs=require('fs'),path=require('path'),cp=require('chi
 const envPort=(name,fallback)=>{const value=Number(process.env[name]||fallback);return Number.isInteger(value)&&value>0&&value<65536?value:fallback};
 const HOST='127.0.0.1',PORT=envPort('PORT',18765),OLLAMA_HOST=process.env.ME5412_OLLAMA_HOST||'127.0.0.1',OLLAMA_PORT=envPort('ME5412_OLLAMA_PORT',11434),MODEL=process.env.ME5412_MODEL||'qwen3:8b',QA_MODEL=MODEL,TRANSLATION_MODEL=MODEL;
 let data;try{data=JSON.parse(fs.readFileSync(path.join(__dirname,'index.json'),'utf8'))}catch{}
-const notesRoot=path.resolve(data?.folder||'', '笔记版课件');
+const notesRoot=path.resolve(data?.folder||'', 'course-notes');
 const isNotesFile=file=>{const filePath=path.resolve(String(file?.path||''));return !!data?.folder&&filePath.startsWith(notesRoot+path.sep)};
 const notesData=data?{...data,files:(data.files||[]).filter(isNotesFile)}:null;
 const page=fs.readFileSync(path.join(__dirname,'app.html'),'utf8').replace('</body>','<script>'+fs.readFileSync(path.join(__dirname,'ask-lifecycle.js'),'utf8')+'</script></body>');

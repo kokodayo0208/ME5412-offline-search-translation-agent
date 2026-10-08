@@ -1,1 +1,0 @@
-{"name":"me5412-offline-search","version":"1.0.0","private":true,"type":"commonjs","scripts":{"build-index":"node indexer.js","start":"node server.js","test":"node --test test/*.test.js"}}

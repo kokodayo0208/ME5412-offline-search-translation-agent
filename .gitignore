@@ -1,18 +1,16 @@
 # Generated search indexes and runtime output (rebuild locally at launch).
-ME5412离线课件搜索器/index.json
-ME5412离线课件搜索器/offline_index.json
-offline_search/offline_index.json
-offline_search/index.json
-offline_search/test_marker*.txt
+offline-agent/index.json
+offline-agent/offline_index.json
+offline-agent/test_marker*.txt
 *thinking_probe_output.json
-ME5412离线课件搜索器/validation_*.json
-ME5412离线课件搜索器/part2_visual_qa*.json
-ME5412离线课件搜索器/part2_visual_audit.json
-ME5412离线课件搜索器/live_probe.js
-ME5412离线课件搜索器/tmp_*.cjs
-ME5412离线课件搜索器/*.log
-ME5412离线课件搜索器/*.recoverybackup
-ME5412离线课件搜索器/*.interface-backup
+offline-agent/validation_*.json
+offline-agent/part2_visual_qa*.json
+offline-agent/part2_visual_audit.json
+offline-agent/live_probe.js
+offline-agent/tmp_*.cjs
+offline-agent/*.log
+offline-agent/*.recoverybackup
+offline-agent/*.interface-backup
 
 # Dependencies, caches, temporary renders, and local validation output.
 **/node_modules/

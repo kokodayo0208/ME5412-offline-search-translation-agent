@@ -5,8 +5,8 @@ param(
 )
 $ErrorActionPreference = "Stop"
 $root = Split-Path $PSScriptRoot -Parent
-$appFolder = [string]::Concat("ME5412",[char]0x79bb,[char]0x7ebf,[char]0x8bfe,[char]0x4ef6,[char]0x641c,[char]0x7d22,[char]0x5668)
-$notesFolder = [string]::Concat([char]0x7b14,[char]0x8bb0,[char]0x7248,[char]0x8bfe,[char]0x4ef6)
+$appFolder = "offline-agent"
+$notesFolder = "course-notes"
 $appSource = Join-Path $root $appFolder
 $noteSource = Join-Path $root $notesFolder
 $dest = [IO.Path]::GetFullPath($Destination)
@@ -17,7 +17,7 @@ New-Item -ItemType Directory -Force -Path $dest | Out-Null
 New-Item -ItemType Directory -Force -Path (Join-Path $dest "app"),(Join-Path $dest "data"),(Join-Path $dest "runtime\node"),(Join-Path $dest "runtime\ollama"),(Join-Path $dest "scripts") | Out-Null
 
 # Explicit allow-list: no validation results, logs, backups, assignments, or legacy app.
-$appFiles = @("app.html","ask-lifecycle.js","server.js","search.js","indexer.js","package.json","package-lock.json","corrections.json","control_knowledge_audit.json","visual_supplements.json")
+$appFiles = @("app.html","ask-lifecycle.js","server.js","search.js","indexer.js","package.json","package-lock.json","corrections.json","visual_supplements.json")
 foreach ($name in $appFiles) { Copy-Item (Join-Path $appSource $name) (Join-Path $dest "app\$name") }
 New-Item -ItemType Directory -Force -Path (Join-Path $dest "app\part2_visual"),(Join-Path $dest "app\app\part2_visual") | Out-Null
 Get-ChildItem -LiteralPath (Join-Path $appSource "part2_visual") -Filter "*.json" -File | Copy-Item -Destination (Join-Path $dest "app\part2_visual") -Force
