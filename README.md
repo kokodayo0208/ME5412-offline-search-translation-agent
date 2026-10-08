@@ -2,7 +2,7 @@
 
 这是一个面向 Windows 10/11 x64 的 ME5412 课件本地搜索、翻译与问答工具。推荐给普通用户的交付形式是 GitHub Release 中的便携 ZIP：Node.js、Ollama、所需运行库、许可证文件、应用、知识库和 11 份“笔记版课件”PDF 都由发布包提供。用户不需要单独安装 Node.js、Ollama、npm，也不需要访问其他网站下载依赖或模型。
 
-单模型便携资产为 Release `offline-agent-windows-v1.1.0`。最终文本版 ZIP 为 `ME5412-portable-win-x64-v1.1.0.zip`，大小 `1,938,371,859` 字节，SHA-256 为 `C6ADB51268C61277085C524A737738D6406F6EF20F26CAAA49A44B74CE9A94F7`。模型资产约 5.23 GB，从公开 GitHub Release 恢复；不要使用旧版双模型包。
+单模型便携资产为 Release `offline-agent-windows-v1.1.0`。最终文本版 ZIP 为 `ME5412-portable-win-x64-v1.1.0.zip`，大小 `1,938,372,067` 字节，SHA-256 为 `0B5D823156B6619CF47C8E3BA3FD4D5A6C5E569D700EB1C55373CD32B890F6C1`。模型资产约 5.23 GB，从公开 GitHub Release 恢复；不要使用旧版双模型包。
 
 ## 普通用户从哪里开始
 
