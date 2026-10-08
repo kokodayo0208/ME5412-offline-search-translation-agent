@@ -1,6 +1,11 @@
 $ErrorActionPreference = 'Stop'
 
-$baseUrl = 'http://127.0.0.1:18765/'
+$uiPort = 18765
+if ($env:PORT) {
+    $parsedPort = 0
+    if ([int]::TryParse($env:PORT, [ref]$parsedPort) -and $parsedPort -gt 0 -and $parsedPort -lt 65536) { $uiPort = $parsedPort }
+}
+$baseUrl = "http://127.0.0.1:$uiPort/"
 $serverPath = Join-Path $PSScriptRoot 'server.js'
 $stdoutPath = Join-Path $PSScriptRoot 'startup-server.log'
 $stderrPath = Join-Path $PSScriptRoot 'startup-server-error.log'
@@ -19,7 +24,9 @@ if (Test-ServerReady) {
     exit 0
 }
 
-$node = (Get-Command node.exe -ErrorAction Stop).Source
+$node = $env:ME5412_NODE_EXE
+if (-not $node) { $node = Join-Path $PSScriptRoot 'runtime\node\node.exe' }
+if (-not (Test-Path -LiteralPath $node -PathType Leaf)) { $node = (Get-Command node.exe -ErrorAction Stop).Source }
 $process = Start-Process -FilePath $node -ArgumentList @($serverPath) -WorkingDirectory $PSScriptRoot -WindowStyle Hidden -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath -PassThru
 for ($attempt = 0; $attempt -lt 30; $attempt++) {
     Start-Sleep -Seconds 1

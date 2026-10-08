@@ -1,21 +1,24 @@
 # ME5412 离线搜索 / 翻译 agent
 
-这是 ME5412 的离线课件搜索与翻译项目。GitHub display title：**ME5412离线搜索/翻译agent**；repository slug：`ME5412-offline-search-translation-agent`。本仓库为公开备份，任何人都可以下载；公开不改变第三方材料的版权或许可条件。
+这是一个面向 Windows 10/11 x64 的 ME5412 课件本地搜索、翻译与问答工具。推荐给普通用户的交付形式是 GitHub Release 中的便携 ZIP：Node.js、Ollama、所需运行库、许可证文件、应用、知识库和 11 份“笔记版课件”PDF 都由发布包提供。用户不需要单独安装 Node.js、Ollama、npm，也不需要访问其他网站下载依赖或模型。
 
-## 运行
+已确认的便携资产：[`ME5412-portable-win-x64-2026-10-08.zip`](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.0.0/ME5412-portable-win-x64-2026-10-08.zip)，大小 1,938,371,197 bytes，SHA-256 `99E825E2899296423FB2F68E10B5C6BC9F9CD43AF84C7B04908FEAF649697E20`。Release 标签为 `offline-agent-windows-v1.0.0`。
 
-Windows 上先安装 Node.js 18+、Ollama，并准备 `qwen3:8b`（问答/翻译）；`qwen3-vl:4b-instruct` 为可选的本地图像问答模型。双击 [`ME5412离线课件搜索器/启动离线课件搜索.cmd`](ME5412离线课件搜索器/启动离线课件搜索.cmd) 启动独立 UI。它绑定本机回环地址，搜索和模型请求均留在本机；不调用外部 API，不在启动时下载模型。
+## 普通用户从哪里开始
 
-当前翻译/问答范围以 `笔记版课件/` 的 11 份 PDF 为准。根目录的原始课件、项目作业材料、结构化视觉补充和测试也保留在项目中，但不是 notes-only UI 的检索范围。首次运行会按相对路径扫描课件并重建生成的 `ME5412离线课件搜索器/index.json`；该索引被 `.gitignore` 排除，源文件路径仍以结构化 JSON 的相对路径记录。
+1. 从本仓库的公开 GitHub Release 下载构建者确认过的便携 ZIP（无需 GitHub 账号）。源码 ZIP 不是便携运行包；不要用源码 ZIP 代替带 runtime 的资产。
+2. 解压到较短、可写、非 `Program Files` 的目录，例如 `D:\ME5412-portable`。不要覆盖已有安装。
+3. 在仍能稳定访问 GitHub 的网络环境中双击 `setup-model.cmd`。它只从本项目 GitHub API 和 Release asset 主机获取模型资产，支持中断后继续，并验证每个分片和完整文件的大小与 SHA-256。
+4. 配置完成后双击 `Start-ME5412.cmd`。浏览器打开本机 `http://127.0.0.1:18766/`；搜索、翻译、问答和模型请求均留在本机。
 
-```powershell
-Set-Location 'ME5412离线课件搜索器'
-npm install
-npm test
-```
+首次模型配置需要网络；完成后可断开网络继续使用。模型文件较大，请预留至少 20 GB 可用磁盘空间和 16 GB 内存；当前 `qwen3:8b` 与 `qwen3-vl:4b-instruct` 两个模型的去重后合计下载量约 8.5 GB，确切大小以发布清单为准。视觉模型是否随包配置以最终清单为准。模型生成的答案仍需结合课件原文核对，离线运行不等于答案一定正确。
 
-## 内容与恢复
+完整的新手步骤、断点续传、端口和安全排查见 [`docs/userguide.md`](docs/userguide.md)。
 
-上传范围、SHA-256 和逐文件清单见 [`UPLOAD-MANIFEST.md`](UPLOAD-MANIFEST.md)。模型权重不进入 Git 仓库；本地备份/恢复与校验说明见 [`docs/model-backup.md`](docs/model-backup.md)。需要交付模型时，先由用户明确创建 GitHub Release，再把 `.model-backup-release/` 中每个小于 2 GiB 的 part 作为独立 release asset 上传（不要把它们提交到 Git history），并保留 `backup-manifest.json`。目标电脑按 [`docs/model-restoration.md`](docs/model-restoration.md) 或恢复脚本重组校验。没有任何硬编码的用户目录或绝对索引路径。
+## 开发者与内容说明
 
-课件和作业材料是 NUS 课程/相关作者的第三方材料；本项目不声明其版权或再分发授权，请遵守原始材料的版权、课程政策和适用法律。本项目不附带 NUS 课程材料的额外授权。模型备份中的上游模型按其随附元数据和上游许可证（包括适用时的 Apache License 2.0）使用，不将所有文件统称为 MIT 许可。
+源码是可选的开发者路径，不是普通用户的安装前置条件。仓库中的 `distribution/` 脚本用于构建便携包；本页记录的资产名称、下载 URL、模型清单、许可证和校验值对应已确认的 Release。
+
+应用只面向便携包内的 `app/` 与 `笔记版课件/` 内容；不要把根目录历史材料、作业、旧版程序或临时输出当作便携应用内容。课件和作业材料属于 NUS 课程及相关作者的第三方材料，本项目不声明额外版权或再分发授权。模型按其上游许可证和随附元数据使用，不把所有文件统称为 MIT 许可。
+
+仓库地址：<https://github.com/kokodayo0208/ME5412-offline-search-translation-agent>

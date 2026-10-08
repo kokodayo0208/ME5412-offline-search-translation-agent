@@ -1,11 +1,13 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-where node >nul 2>nul || (echo Node.js 18 or later is required.& pause & exit /b 1)
+if not defined ME5412_NODE_EXE if exist "%~dp0runtime\node\node.exe" set "ME5412_NODE_EXE=%~dp0runtime\node\node.exe"
+if not defined ME5412_NODE_EXE set "ME5412_NODE_EXE=node"
+if not defined PORT set "PORT=18765"
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0start_ollama.ps1"
 if errorlevel 1 echo Ollama could not be prepared. The course search will still start.
 echo Building local course index...
-node indexer.js "%~dp0.."
+"%ME5412_NODE_EXE%" indexer.js "%~dp0.."
 if errorlevel 1 (
   echo Indexing failed.
   pause
@@ -18,4 +20,4 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-start "ME5412 Offline Search" "http://127.0.0.1:18765/"
+start "ME5412 Offline Search" "http://127.0.0.1:%PORT%/"

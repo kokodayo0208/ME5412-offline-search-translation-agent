@@ -1,0 +1,5 @@
+The bundled node.exe is the official Node.js Windows x64 runtime copied from the
+Node installation used to build this package. Node.js is distributed under the
+MIT license. Source and license information: https://github.com/nodejs/node
+Version is recorded by the build smoke test (`node.exe -v`). npm and npx are not
+included because the portable application does not install dependencies.

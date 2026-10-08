@@ -24,6 +24,7 @@ ME5412离线课件搜索器/*.interface-backup
 **/.cache/
 _check/
 tmp_validation/
+_portable-build/
 
 # Local model weights are never part of this repository.
 /.model-backup-release/
