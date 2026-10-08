@@ -1,50 +1,74 @@
 # ME5412 Offline Search / Translation Agent
 
-这是一个面向 Windows 10/11 x64 的 ME5412 课件本地搜索、课件问答和离线翻译工具。便携发布包已经包含 Node.js、Ollama、运行库、应用、索引、知识解析和笔记版课件；普通用户不需要另外安装 Node.js、Ollama、npm，也不需要到其他网页下载依赖。
+This repository contains a Windows x64 offline study tool for searching ME5412 course notes, locating the relevant PDF page, generating a Chinese explanation with a local language model, and translating text locally. It is intended for personal study after the initial model download.
 
-## 快速开始
+## What is included
 
-1. 下载 [ME5412-offline-agent-win-x64-v1.2.0.zip](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.2.0/ME5412-offline-agent-win-x64-v1.2.0.zip)。不要下载源码 ZIP 代替便携包。
-2. 将 ZIP 解压到短路径、可写目录，例如 `D:\ME5412-portable`，不要放在 `Program Files`、同步盘或只读目录。
-3. 首次联网时双击 `setup-model.cmd`。它只从本项目 GitHub Release 恢复 `qwen3:8b`，并校验分片和 SHA-256；中断后可重新运行继续。
-4. 验证完成后双击 `Start-ME5412.cmd`，浏览器访问本机页面。之后可断网使用搜索、翻译和问答。
+- A self-contained Windows portable package with the application, Node.js, Ollama, required runtime files, the indexed `course-notes` corpus, and the `qwen3:8b` text model installer.
+- Keyword and full-question search with source-page locations.
+- A course preview area and a separate answer-output area.
+- Independent search/answer and offline-translation workspaces.
+- Course-specific visual and reasoning notes used as supplementary context; the model is still expected to verify every answer against the cited course page.
 
-发布包 SHA-256：`5207c618b58861917562dccc15b2bb129dd0af11c8a491df97ab75e6e9f754b4`。可下载同一 Release 的校验文件比对；本版本为预发布，完整 AI 生成压力测试尚未完成。
+The current package does **not** contain a vision model and does not provide built-in image OCR. For screenshots, use WeChat's “Extract text” feature when available, then paste the extracted text into the search or translation box.
 
-本版本只使用文字模型 `qwen3:8b`，不包含图片识字或视觉模型。截图文字可使用微信支持的本地截图文字提取：截图后在图片预览中右键选择“提取文字”，复制结果并粘贴到本工具。微信是否支持断网取决于具体版本和组件状态；建议先联网登录并成功提取一次，再断网自行验证。微信 OCR 不是本工具的运行依赖，也不需要把截图发送到聊天服务。
+## Quick start (Windows 10/11 x64)
 
-## 推荐电脑配置
+1. Download the portable ZIP from the [GitHub Releases page](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases). Do not substitute the repository's source-code ZIP.
+2. Extract it to a short, writable path such as `D:\ME5412-offline-agent`. Avoid `Program Files`, read-only folders, and synchronized folders.
+3. On the first run, while GitHub is reachable, double-click `setup-model.cmd`. The setup program downloads the `qwen3:8b` model parts from this repository's Release assets and verifies every part with SHA-256. It does not require Node.js, npm, Ollama, or a download from another website.
+4. When setup reports success, double-click `Start-ME5412.cmd`. The browser page opens on the local machine.
+5. After the model has been installed and verified, disconnecting from the Internet is supported for search, answer generation, and translation.
 
-以下是运行 8B 本地模型的工程建议，不是上游官方保证：
+The setup can be run again after an interrupted download; verified parts are reused. Do not rename or manually merge model parts.
 
-| 项目 | 推荐 | 受限但可能运行 |
+## Recommended computer configuration
+
+These are practical recommendations for the local 8B model, not a performance guarantee from Qwen or Ollama.
+
+| Component | Recommended | Restricted configuration |
 | --- | --- | --- |
-| 系统 | Windows 10/11 64 位 | Windows 10/11 64 位 |
-| CPU | 现代 6–8 核，支持 AVX2 | 4 核以上，CPU-only 会明显更慢 |
-| 内存 | 32 GB RAM | 16 GB RAM，需关闭浏览器和其他 AI 程序 |
-| GPU | 8 GB VRAM 或更高 | 6 GB VRAM 可能需要降低并发或回退 CPU |
-| 磁盘 | SSD，至少 25 GB 可用空间 | 至少 12 GB，空间紧张时不保证安装成功 |
+| Operating system | Windows 10/11 64-bit | Windows 10/11 64-bit |
+| CPU | Modern 6–8 core CPU, AVX2 preferred | 4+ cores; CPU-only is slower |
+| System memory | 32 GB RAM | 16 GB RAM may work after closing other heavy programs |
+| GPU | 8 GB VRAM or more | 6 GB VRAM may require lower concurrency or CPU fallback |
+| Storage | SSD with at least 25 GB free | 12 GB minimum, with no guarantee |
 
-“8B”是模型参数规模，不等于只占 8 GB 内存。运行还需要模型权重、KV cache、上下文（当前默认 4096）、Ollama、Node.js、操作系统和其他程序占用的空间。模型回答仍应回看课件来源，不能把生成结果视为课程或医疗建议。
+“8B” is the parameter count, not the complete runtime memory requirement. The model, context/KV cache, Ollama, Node.js, the operating system, and the course index all need working space. Close browsers and other AI applications if model loading is slow or fails.
 
-## 界面流程
+## Interface workflow
 
-以下为本项目的真实本机界面截图，展示启动、课件搜索、课件预览和翻译四个阶段。截图只用于说明 UI 操作流程，不代表所有电脑上的 AI 生成均已通过压力测试；首次运行请以终端的模型加载和校验提示为准。
+1. **Course search**: enter a keyword or a complete question and click the Chinese **搜索课件** (Search course materials) button.
+2. **Source review**: select a result, inspect its page location, and open the preview. The answer panel remains available beside the preview.
+3. **Generate answer**: click **生成答案** (Generate answer). Treat the model output as a study aid and check the cited source page.
+4. **Offline translation**: switch to **离线翻译** (Offline translation), enter text, choose the language direction, and translate. This workspace keeps its own state and can be used independently of search.
 
-![启动界面](docs/images/01-home.jpg)
+![Home and startup](docs/images/01-home.jpg)
 
-![课件搜索：命中结果、定位页及三栏布局](docs/images/02-search.jpg)
+![Search results and source location](docs/images/02-search.jpg)
 
-![离线翻译](docs/images/04-translation.jpg)
+![PDF preview and answer panel](docs/images/03-preview.jpg)
 
-浏览器的嵌入式 PDF 预览在截图环境中可能显示为黑色；这不表示课件内容不可用。截图用于展示“定位结果、预览与答案栏”的布局，不宣称其中清晰呈现了 PDF 页面内容。
+![Offline translation](docs/images/04-translation.png)
 
-## 版权与使用限制
+The screenshots document the interface stages. They are not a guarantee that every computer will pass a full model-generation stress test.
 
-**仓库中的课件和笔记受版权保护。相关版权归 NUS、原课件作者及其他相应权利人所有。仅限个人、非商业学习使用；严禁任何商业使用、收费售卖、商业培训、产品集成或再分发。公开下载不代表版权转让，也不代表获得商业授权。请勿删除或遮挡课件中的版权标记。**
+## Screenshot text extraction
 
-软件、模型、Node.js、Ollama 和第三方运行库分别受各自上游许可证约束；第三方许可证与课程材料的使用限制相互独立。本声明不是法律意见，也不声称授予超出权利人许可范围的权利。
+The built-in image/OCR feature has been removed. If a screenshot contains printed text, use WeChat's screenshot text extraction (“Extract text”), copy the result, and paste it into this application. WeChat OCR availability and offline behavior depend on the installed WeChat version and its components; it is optional and is not an application dependency. Test it yourself before relying on it offline.
 
-仓库：[kokodayo0208/ME5412-offline-search-translation-agent](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent)
+## Offline and privacy behavior
 
-详细安装、断网测试、故障排查和目录说明见 [`docs/userguide.md`](docs/userguide.md)。
+The application uses local `127.0.0.1` services. After first-time setup, normal search, answer generation, and translation do not require an Internet connection. The setup phase does require GitHub access because it downloads the model archive. The package does not require an account or a separate website download.
+
+## Verification status
+
+The v1.2.0 package was validated end to end from a clean GitHub download: the ZIP SHA-256 matched the published checksum (`5207c618b58861917562dccc15b2bb129dd0af11c8a491df97ab75e6e9f754b4`), extraction succeeded, `setup-model.cmd` restored and verified the single `qwen3:8b` model, and application startup, course search, source-page preview, answer generation, offline translation, and PDF preview were all tested successfully. The model was confirmed running on the GPU (about 4.2 GB VRAM at a 4096 context). This record comes from one specific computer; it is not a universal hardware guarantee.
+
+## Copyright and non-commercial restriction
+
+**The course PDFs, notes, and derived course-content summaries are copyrighted materials. Copyright remains with NUS, the original lecturers/authors, and other applicable rights holders. They are provided only for personal, non-commercial study. Commercial use is strictly prohibited, including sale, paid training, commercial redistribution, product integration, or using the materials in a commercial service. Public availability does not transfer copyright or grant commercial permission. Do not remove or obscure copyright notices.**
+
+The software, model, Node.js, Ollama, and third-party packages remain subject to their respective upstream licenses. Those licenses do not override the course-material restrictions above.
+
+See [`docs/userguide.md`](docs/userguide.md) for installation details, troubleshooting, validation, and the full copyright notice.

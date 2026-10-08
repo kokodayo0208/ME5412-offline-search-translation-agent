@@ -1,7 +1,9 @@
 # Generated search indexes and runtime output (rebuild locally at launch).
 offline-agent/index.json
 offline-agent/offline_index.json
-offline-agent/test_marker*.txt
+offline_search/offline_index.json
+offline_search/index.json
+offline_search/test_marker*.txt
 *thinking_probe_output.json
 offline-agent/validation_*.json
 offline-agent/part2_visual_qa*.json
@@ -39,3 +41,6 @@ Thumbs.db
 
 # Course originals kept locally at repository root.
 /*.pdf
+
+# Local working/debug copies (never publish).
+._*

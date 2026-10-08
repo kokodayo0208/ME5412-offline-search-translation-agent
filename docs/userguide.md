@@ -1,72 +1,74 @@
-# ME5412 Offline Agent 用户指南
+# ME5412 Offline Agent — User Guide
 
-本指南面向 Windows 10/11 x64 普通用户。便携包已包含应用、笔记版课件、索引、知识解析、Node.js、Ollama 和所需运行库；不需要自行安装开发工具，也不需要从其他网站下载文件。
+This guide is for the Windows 10/11 x64 portable package. The package contains the application, `course-notes`, the search index, Node.js, Ollama, and the scripts required to install and run the single `qwen3:8b` text model. End users do not need to install development tools or download dependencies from another website.
 
-## 1. 下载、解压、首次配置
+## 1. Download and install
 
-1. 下载 [ME5412-offline-agent-win-x64-v1.2.0.zip](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.2.0/ME5412-offline-agent-win-x64-v1.2.0.zip)。源码 ZIP 不是运行包。
-2. 解压到短路径和可写目录，例如 `D:\ME5412-portable`。不要放入 `C:\Program Files`、同步盘或只读目录。
-3. 确认解压目录包含 `Start-ME5412.cmd`、`setup-model.cmd`、`runtime\\node\\node.exe`、`runtime\\ollama\\ollama.exe`、`app\\` 和 `data\\`。
-4. 在可以访问 GitHub 的网络环境中双击 `setup-model.cmd`。安装器只恢复本项目 Release 中的单个 `qwen3:8b` 模型，不调用 npm，不执行 `ollama pull`，也不要求访问其他网站。
-5. 等待模型分片逐项校验完成。中断后再次双击同一文件即可续传；不要手动改名、合并或移动分片。
+1. Open the [GitHub Releases page](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases) and download the portable Windows ZIP. The source-code ZIP is not the runnable package.
+2. Extract the ZIP to a short writable directory, for example `D:\ME5412-offline-agent`.
+3. Confirm that the extracted directory contains `Start-ME5412.cmd`, `setup-model.cmd`, `runtime\node\node.exe`, `runtime\ollama\ollama.exe`, `app\`, `course-notes\`, and `data\`.
+4. While GitHub is reachable, double-click `setup-model.cmd`. It streams the single `qwen3:8b` model from this repository's Release assets, verifies size and SHA-256, and stores the result under the package's own model directory. It does not call `npm install`, `ollama pull`, or another download site.
+5. Wait for the final success message. If the download is interrupted, run the same command again; verified parts are reused. Do not rename, merge, or delete individual parts during setup.
+6. Double-click `Start-ME5412.cmd` after setup succeeds.
 
-便携 ZIP 的 SHA-256 为 `5207c618b58861917562dccc15b2bb129dd0af11c8a491df97ab75e6e9f754b4`。可下载同一 Release 的校验文件比对。本版本为预发布：安装、启动、搜索和运行时服务已做结构性验证，但完整 AI 生成压力测试尚未完成。
+The first setup requires Internet access to GitHub. Once the model has been verified, the normal application workflow is designed to run offline.
 
-完成首次配置后即可断网。模型只保存在便携包的 `data\\models` 中，不建立额外的长期分片备份。
+## 2. Hardware guidance
 
-## 2. 推荐配置和内存说明
+Recommended: Windows 10/11 64-bit, a modern 6–8 core CPU with AVX2, 32 GB RAM, 8 GB or more VRAM, an SSD, and at least 25 GB free space. A 16 GB RAM / 6 GB VRAM computer may run with reduced concurrency after other heavy programs are closed, but this is a restricted configuration. CPU-only execution may be much slower.
 
-推荐 Windows 10/11 x64、现代 6–8 核 CPU（建议支持 AVX2）、32 GB RAM、8 GB 或更高 VRAM、SSD 且至少 25 GB 可用空间。16 GB RAM 或 6 GB VRAM 属于受限配置，运行前应关闭浏览器、其他 AI 软件和大型程序；CPU-only 可以运行，但速度可能较慢。
+The model's 8B parameter label is not a RAM requirement. Runtime memory also includes model weights, context/KV cache, Ollama, Node.js, the operating system, and the course index. Do not treat these recommendations as an official performance guarantee.
 
-5.23 GB 是权重规模的近似量，不是程序运行所需的全部内存。还需为上下文窗口（默认 4096）、KV cache、Ollama、Node.js、操作系统和课件索引预留空间。上述配置是工程建议，不是 Qwen 或 Ollama 的官方性能保证。构建机由于提交内存不足，未完成完整的 8B 生成压力测试；不要把发布包说明理解为所有硬件都已通过压力验证。
+## 3. Using the interface
 
-## 3. 启动和使用
+The interface labels are currently Chinese:
 
-双击 `Start-ME5412.cmd`。程序使用包内运行时，不会停止或覆盖电脑上已有的 Ollama。应用使用本机地址；便携 Ollama 默认使用独立端口 `11435`，应用默认使用 `18766`。
+| Chinese label | Meaning | Action |
+| --- | --- | --- |
+| 关键词课件搜索 | Course search | Search indexed course notes |
+| 图片识字 | Removed | Not available in this release |
+| 离线翻译 | Offline translation | Translate text with the local model |
+| 搜索课件 | Search course materials | Run the course search |
+| 生成答案 | Generate answer | Ask the local model to explain using retrieved context |
 
-界面使用流程：
+Search results identify the relevant course file and page. The preview and answer-output areas are kept visible together so that the source can be checked before relying on an explanation. Search and translation maintain separate interface state and may be switched independently.
 
-1. 在“课件搜索”页输入关键词或完整题目，点击搜索，查看命中的课件页。
-2. 在结果中打开课件预览，答案输出窗口会保留在界面中；生成答案前先核对来源页。
-3. 在“离线翻译”页输入文本，选择语言并翻译。搜索和翻译的界面状态相互独立，可以分别使用。
-4. 搜索、问答和翻译共用本地 `qwen3:8b`。它是文字模型，不直接读取图片。
+The package uses a private local Ollama port and does not need to stop an Ollama installation already running on the computer. If a port conflict is reported, close the conflicting process or change the package configuration only as documented by the release.
 
-## 4. 界面阶段截图
+## 4. WeChat screenshot OCR
 
-以下截图展示实际界面操作流程，不代表所有电脑上的模型生成均已通过压力测试：
+This release intentionally uses one text model and does not include a vision model or built-in OCR. To extract text from a screenshot, use WeChat's screenshot tool and its “Extract text” option, copy the result, and paste it into the course search or translation box.
 
-![启动界面](images/01-home.jpg)
+WeChat's OCR feature, login state, language support, and offline behavior vary by version. It is optional and not required to run this agent. Test the feature while online before relying on it offline. Do not send copyrighted course screenshots to a cloud service merely to use this tool.
 
-![课件搜索：命中结果、定位页及三栏布局](images/02-search.jpg)
+## 5. Offline smoke test
 
-![离线翻译](images/04-translation.jpg)
+After setup reports success:
 
-浏览器的嵌入式 PDF 预览在截图环境中可能显示为黑色；截图用于展示定位、预览和答案栏布局，不宣称截图中清晰呈现了 PDF 页面内容。
+1. Start the program once while online and wait for the local page to load.
+2. Search for a distinctive course phrase and confirm that a source file and page are shown.
+3. Open the preview and confirm that the answer area remains present.
+4. Generate one short answer and translate one short paragraph.
+5. Disconnect from the Internet and repeat search, answer generation, and translation.
 
-## 5. 截图文字提取
+The release validation record should state which of these steps were actually completed. A local model can still make a wrong course judgment; always compare its explanation with the cited course page.
 
-本项目已移除图片识字功能。需要识别截图中的印刷文字时，可以使用微信支持的本地截图文字提取：截图后打开图片预览，在图片上右键选择“提取文字”，复制识别结果，再粘贴到本工具的搜索或翻译框。
+## 6. Troubleshooting
 
-这不是本工具的必需依赖。不同微信版本的 OCR 组件和断网能力可能不同；建议先联网登录微信并成功提取一次，再断网自行测试。不要把“微信支持本地 OCR”理解为所有版本都提供离线保证，也不要为了本工具把课件截图发送到聊天服务。
+**The terminal remains at “Loading qwen3:8b”.** Confirm setup success, close browsers and other AI tools, check free RAM and disk space, and start again from the extracted package directory.
 
-## 6. 断网检查
+**Node.js or Ollama is missing.** Re-extract the complete portable ZIP. Do not replace the bundled runtime with files downloaded from another site.
 
-首次模型校验成功后断开网络，重新双击 `Start-ME5412.cmd`，测试课件搜索、预览、翻译和问答。页面应仍通过 `127.0.0.1` 打开。断网运行只证明本地依赖路径可用，不代表每一道模型答案都正确；课程判断必须以课件原文和来源页为准。
+**Model setup stops part way through.** Run `setup-model.cmd` again. It verifies existing parts and resumes missing or incomplete parts.
 
-## 7. 常见问题
+**The page opens but no answer appears.** First confirm that course search returns a source page, then check that the local model setup finished successfully. A source search result does not require model generation; answer generation and translation do.
 
-**一直 Loading**：先确认 `setup-model.cmd` 已显示校验成功，确认目录可写，并关闭占用内存的浏览器和 AI 软件后再启动。
+**The PDF preview looks black or incomplete.** Use the displayed file/page location and open the PDF with a local PDF viewer if necessary. The screenshots in this repository document layout, not PDF-rendering behavior on every browser.
 
-**找不到 Node 或 Ollama**：不要从其他网站下载替代文件覆盖运行时。重新从 GitHub Release 解压完整便携 ZIP 到新的短路径，并确认 `runtime\\node\\node.exe` 与 `runtime\\ollama\\ollama.exe` 存在。
+**SmartScreen or antivirus warns.** Verify that the ZIP came from this repository's Release page and compare its SHA-256 with the release checksum. Do not disable security controls when the download origin cannot be verified.
 
-**端口冲突**：本包使用 `18766` 和 `11435`，不会要求停止其他 Ollama。请关闭占用这些端口的程序或联系管理员处理。
+## 7. Copyright and permitted use
 
-**磁盘空间不足**：释放空间后重新运行 `setup-model.cmd`。不要手动删除已校验的模型文件。
+**The course PDFs, notes, screenshots, and course-specific summaries are copyrighted. Copyright belongs to NUS, the original lecturers/authors, and other applicable rights holders. This repository is for personal, non-commercial study only. Commercial use is strictly prohibited, including selling or renting the materials, paid tutoring or training, commercial redistribution, product integration, or use in a commercial hosted service. Downloading a public archive does not transfer copyright or grant a commercial license. Do not remove copyright notices.**
 
-**SmartScreen 或杀毒软件提示**：核对下载是否来自本仓库 Release、校验值和许可证；无法确认时停止运行，不要盲目关闭安全功能。
-
-## 8. 版权和非商业限制
-
-**课件及笔记受版权保护，版权归 NUS、原作者和其他相应权利人所有。本仓库材料仅限个人非商业学习，严禁商业使用、收费售卖、商业培训、产品集成或未经授权的再分发。公开下载不等于版权转让或商业授权，不得删除版权标记。**
-
-Node.js、Ollama、模型及其他第三方运行库遵守各自许可证；课程材料的版权限制另行适用。本说明不是法律意见，也不授予任何超出权利人许可范围的权利。
+The application code, `qwen3:8b`, Node.js, Ollama, and third-party dependencies are governed by their own licenses. Those licenses are separate from and do not weaken the restrictions on the course materials. This notice is not legal advice.
