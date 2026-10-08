@@ -42,7 +42,11 @@ const add = (name, relative, record) => {
   expected.set(name, { relative, record });
 };
 for (const blob of manifest.blobs || []) for (const part of blob.parts || []) add(`model-${blob.sha256}-${part.name}`, path.join('blobs', blob.sha256, part.name), { sha256: part.sha256, size: part.size });
-for (const file of manifest.files || []) if (file.kind === 'metadata') add(`model-metadata-${file.backupPath.replaceAll('\\', '/').replaceAll('/', '-')}`, file.backupPath, { sha256: file.sha256, size: file.size });
+for (const file of manifest.files || []) if (file.kind === 'metadata') {
+  const backupPath = file.backupPath.replaceAll('\\', '/');
+  const flatPath = backupPath.startsWith('metadata/') ? backupPath.slice('metadata/'.length) : backupPath;
+  add(`model-metadata-${flatPath.replaceAll('/', '-')}`, backupPath, { sha256: file.sha256, size: file.size });
+}
 let checked = 0;
 for (const [name, item] of expected) { const source = path.join(assets, name); if (!fs.existsSync(source)) throw new Error(`missing release asset: ${name}`); await copyVerified(source, item.relative, item.record, name); checked++; }
 await fsp.mkdir(output, { recursive: true });
