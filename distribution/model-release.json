@@ -1,7 +1,8 @@
 {
   "releaseApi": "https://api.github.com/repos/kokodayo0208/ME5412-offline-search-translation-agent/releases/tags/backup-2026-10-08",
   "releasePage": "https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/tag/backup-2026-10-08",
-  "manifestAssetNames": ["backup-manifest.json", "model-backup-manifest.json"],
-  "models": ["qwen3:8b", "qwen3-vl:4b-instruct"],
-  "notes": "Public release metadata only. setup-model.mjs downloads flat parts directly; it does not retain a second parts cache."
+  "manifestFile": "model-manifest.json",
+  "models": ["qwen3:8b"],
+  "model": "qwen3:8b",
+  "notes": "Single text model for course Q&A and offline translation. Image OCR is intentionally not included. setup-model.mjs downloads filtered model parts directly and does not retain a second parts cache."
 }

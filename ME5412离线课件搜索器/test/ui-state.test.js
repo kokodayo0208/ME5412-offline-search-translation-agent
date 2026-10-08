@@ -21,7 +21,7 @@ test('translation has an independent controller and does not write course result
   assert.match(app, /let translationRequest=null/);
   assert.match(app, /signal:controller\.signal/);
   assert.match(app, /translateCancel'\)\.onclick=.*translationRequest\?\.abort/);
-  const translationBlock = app.slice(app.indexOf('let translationRequest=null'), app.indexOf("$('vBar').onsubmit"));
+  const translationBlock = app.slice(app.indexOf('let translationRequest=null'));
   assert.equal(translationBlock.includes('setAnswer('), false);
   assert.equal(translationBlock.includes("$('results')"), false);
   assert.match(lifecycle, /let searchRequest = null/);

@@ -7,10 +7,9 @@
 从公开仓库的 GitHub Release 下载构建者确认的 ZIP：
 
 - 仓库：<https://github.com/kokodayo0208/ME5412-offline-search-translation-agent>
-- Release 标签：`offline-agent-windows-v1.0.0`
-- 便携 ZIP：[ME5412-portable-win-x64-2026-10-08.zip](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.0.0/ME5412-portable-win-x64-2026-10-08.zip)
-- 文件大小：1,938,370,813 bytes
-- SHA-256：`8F52C471F7609A521C6E01899D8DF2D55AB85438FFADF9DF362EC24DD9928161`
+- Release 标签：`offline-agent-windows-v1.1.0`
+- 便携 ZIP：以该 Release 页面列出的单模型便携资产为准
+- 文件大小和 SHA-256：以 Release 资产清单为准；权重分片完成校验前不要使用旧版 v1.0.0
 
 无需 GitHub 账号。只从上述仓库的 Release 下载；不要为了 Node.js、Ollama、npm、模型或 PDF 访问其他网站。源码 ZIP 只包含源码，不是带 Node/Ollama runtime 的便携包。本次发布提供单个完整 ZIP，不需要分卷或 bootstrap 拼接。
 
@@ -25,7 +24,7 @@ Windows SmartScreen 或杀毒软件提示时，不要按指南绕过安全警告
 3. 程序只访问本项目 GitHub Release 所需的 API、GitHub 和 GitHub Release asset 主机；不会调用 npm，不会执行 `ollama pull`，不会从通用网页选取下载源。
 4. 等待终端显示各文件已验证完成。网络中断后可以再次运行同一个命令，它会复用已验证文件、继续未完成的部分，并拒绝覆盖内容不同的已有文件。
 
-当前发布清单的模型为 `qwen3:8b` 与 `qwen3-vl:4b-instruct`；两者去重后的合计下载量约 8.5 GB（不是 `qwen3:8b` 单体大小），确切大小以最终清单为准。视觉模型是否安装以最终发布清单为准；若未包含它，则只下载清单中的必需模型。模型放在包内 `data\models`，不建立第二份长期分片缓存。不要把模型权重提交回 Git 仓库。发布者尚未完成真实模型推理验证前，不得把安装成功描述为“所有问答/翻译均已通过测试”。
+当前单模型清单只有 `qwen3:8b`，用于课件问答和离线翻译。图片识字功能已移除。模型放在包内 `data\models`，不建立第二份长期分片缓存。不要把模型权重提交回 Git 仓库。发布者尚未完成真实模型推理验证前，不得把安装成功描述为“所有问答/翻译均已通过测试”。
 
 只有看到验证成功后，才算第一次配置完成。此时可以断开网络；之后的搜索、课件定位、翻译和问答不需要联网。
 
@@ -38,7 +37,7 @@ Windows SmartScreen 或杀毒软件提示时，不要按指南绕过安全警告
 - 在搜索框输入关键词或完整问题，直接定位 11 份本地 PDF 的相关页。
 - 可选择本地翻译，分别指定输入语言和目标语言；切换语言后，预览和答案区应保留当前选择并更新结果。
 - 问答会先使用课件检索结果，再由本地模型生成回答；请打开来源页核对，不要把模型回答当作课程或医疗建议。
-- 视觉/OCR 问答只有在已安装可选视觉模型且发布包支持该功能时可用。
+- 课件问答和翻译共用同一个已安装的 `qwen3:8b` 模型；本版本不提供图片 OCR。
 
 ## 4. 完全离线证明
 

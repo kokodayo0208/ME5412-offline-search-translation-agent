@@ -35,11 +35,19 @@ const apiUrl = release.releaseApi || cfg.releaseApi;
 const apiResponse = await request(apiUrl);
 const releaseInfo = await apiResponse.json();
 const assets = new Map((releaseInfo.assets || []).map(a => [a.name, a.browser_download_url]));
-const names = release.manifestAssetNames || cfg.manifestAssetNames;
-const manifestName = names.find(n => assets.has(n));
-if (!manifestName) throw new Error(`release has no manifest asset (${names.join(', ')})`);
-const manifestResponse = await request(assets.get(manifestName));
-const manifest = await manifestResponse.json();
+const bundledManifestName = release.manifestFile || cfg.manifestFile;
+const bundledManifestPath = bundledManifestName && path.resolve(root, bundledManifestName);
+let manifest;
+if (bundledManifestPath && fs.existsSync(bundledManifestPath)) {
+  manifest = JSON.parse(await fsp.readFile(bundledManifestPath, 'utf8'));
+  console.log(`Using bundled model manifest: ${bundledManifestName}`);
+} else {
+  const legacyNames = release.manifestAssetNames || cfg.manifestAssetNames || ['backup-manifest.json'];
+  const manifestName = legacyNames.find(n => assets.has(n));
+  if (!manifestName) throw new Error(`release has no model manifest (${legacyNames.join(', ')})`);
+  const manifestResponse = await request(assets.get(manifestName));
+  manifest = await manifestResponse.json();
+}
 await fsp.mkdir(target, { recursive: true });
 const files = new Map();
 for (const f of manifest.files || []) { if (!f.relativePath || !f.sha256 || !Number.isInteger(Number(f.size))) continue; const old = files.get(f.relativePath); if (old && old.sha256 !== f.sha256) throw new Error(`conflicting manifest path: ${f.relativePath}`); files.set(f.relativePath, f); }
@@ -56,7 +64,11 @@ for (const [rel, f] of files) {
     const parts = f.kind === 'metadata' ? [{ name: `metadata-${metadataFlat}`, sha256: f.sha256, size: f.size }] : (blob?.parts || []);
     if (!parts.length) throw new Error(`missing blob manifest: ${f.sha256}`);
     for (const part of parts) {
-      const url = assetFor(f.kind === 'metadata' ? `model-${part.name}` : `model-${blob.sha256}-${part.name}`); if (!url) throw new Error(`missing release part asset: ${part.name}`);
+      const metadataAsset = f.kind === 'metadata' ? [`model-metadata-${metadataFlat}`, `model-${part.name}`, `model-metadata-${part.name}`, part.name] : [];
+      const url = f.kind === 'metadata'
+        ? metadataAsset.map(assetFor).find(Boolean)
+        : assetFor(`model-${blob.sha256}-${part.name}`);
+      if (!url) throw new Error(`missing release part asset: ${part.name}`);
       const response = await request(url); const ph = crypto.createHash('sha256'); let ps = 0;
       for await (const chunk of response.body) { ph.update(chunk); full.update(chunk); ps += chunk.length; total += chunk.length; if (!ws.write(chunk)) await new Promise(resolve => ws.once('drain', resolve)); }
       const got = ph.digest('hex'); if (got !== part.sha256 || ps !== Number(part.size)) throw new Error(`part verification failed: ${part.name}`);

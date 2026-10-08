@@ -15,9 +15,10 @@
 
 ## Local AI / 本地 AI
 
-- Installed model: qwen3-vl:4b-instruct (about 3.3 GB).
+- Installed model: qwen3:8b (single text model for course Q&A and offline translation).
 - AI Q&A searches course slides first, then answers with source pages.
-- Image OCR reads local images and explains questions or diagrams. Images are not uploaded.
+- The same text model handles course Q&A and offline translation. Image OCR is not included in this version.
 - Runtime only connects to 127.0.0.1:11434 and 127.0.0.1:18765. No cloud API is used.
 - The launcher never downloads models during exam use.
-- 4B is the stable default for RTX 3060 6 GB.
+- The portable distribution uses one model only: qwen3:8b.
+- The public portable model asset is about 5.23 GB. The final package was structurally verified, but full 8B generation was not run on the build machine because available commit memory was insufficient; hardware-specific inference is not guaranteed.

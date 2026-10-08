@@ -6,6 +6,7 @@ $node = Join-Path $base 'runtime\node\node.exe'
 $ollama = Join-Path $base 'runtime\ollama\ollama.exe'
 $models = Join-Path $base 'data\models'
 $ollamaPort = 11435
+$modelName = if ($env:ME5412_MODEL) { $env:ME5412_MODEL } else { 'qwen3:8b' }
 if (!(Test-Path $node) -or !(Test-Path (Join-Path $app 'server.js')) -or !(Test-Path $ollama)) { throw 'Portable package is incomplete: bundled Node, app, or Ollama is missing.' }
 $env:OLLAMA_MODELS = $models
 $env:OLLAMA_HOST = "127.0.0.1:$ollamaPort"
@@ -19,12 +20,12 @@ for ($i=0; $i -lt 45; $i++) {
   if ($ollamaProcess.HasExited) { throw "Bundled Ollama exited with code $($ollamaProcess.ExitCode). Run setup-model.cmd and retry." }
   try {
     $tags = (Invoke-WebRequest -Uri $tagsUrl -UseBasicParsing -TimeoutSec 2).Content | ConvertFrom-Json
-    $modelReady = @($tags.models) | Where-Object { $_.name -eq 'qwen3:8b' -or $_.model -eq 'qwen3:8b' }
+    $modelReady = @($tags.models) | Where-Object { $_.name -eq $modelName -or $_.model -eq $modelName }
     if ($modelReady) { break }
   } catch {}
   Start-Sleep -Milliseconds 500
 }
-if (!$modelReady) { Stop-Process -Id $ollamaProcess.Id -Force -ErrorAction SilentlyContinue; throw "Bundled Ollama is running but qwen3:8b is not installed. Run setup-model.cmd while online, then retry." }
+if (!$modelReady) { Stop-Process -Id $ollamaProcess.Id -Force -ErrorAction SilentlyContinue; throw "Bundled Ollama is running but $modelName is not installed. Run setup-model.cmd while online, then retry." }
 $server = Start-Process -FilePath $node -ArgumentList @('server.js','--open') -WorkingDirectory $app -WindowStyle Hidden -PassThru
 $url = "http://127.0.0.1:$Port/"
 for ($i=0; $i -lt 45; $i++) {

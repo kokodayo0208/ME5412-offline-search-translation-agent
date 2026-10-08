@@ -2,7 +2,7 @@
 
 这是一个面向 Windows 10/11 x64 的 ME5412 课件本地搜索、翻译与问答工具。推荐给普通用户的交付形式是 GitHub Release 中的便携 ZIP：Node.js、Ollama、所需运行库、许可证文件、应用、知识库和 11 份“笔记版课件”PDF 都由发布包提供。用户不需要单独安装 Node.js、Ollama、npm，也不需要访问其他网站下载依赖或模型。
 
-已确认的便携资产：[`ME5412-portable-win-x64-2026-10-08.zip`](https://github.com/kokodayo0208/ME5412-offline-search-translation-agent/releases/download/offline-agent-windows-v1.0.0/ME5412-portable-win-x64-2026-10-08.zip)，大小 1,938,370,813 bytes，SHA-256 `8F52C471F7609A521C6E01899D8DF2D55AB85438FFADF9DF362EC24DD9928161`。Release 标签为 `offline-agent-windows-v1.0.0`。
+单模型便携资产为 Release `offline-agent-windows-v1.1.0`。最终文本版 ZIP 为 `ME5412-portable-win-x64-v1.1.0.zip`，大小 `1,938,371,859` 字节，SHA-256 为 `C6ADB51268C61277085C524A737738D6406F6EF20F26CAAA49A44B74CE9A94F7`。模型资产约 5.23 GB，从公开 GitHub Release 恢复；不要使用旧版双模型包。
 
 ## 普通用户从哪里开始
 
@@ -11,7 +11,7 @@
 3. 在仍能稳定访问 GitHub 的网络环境中双击 `setup-model.cmd`。它只从本项目 GitHub API 和 Release asset 主机获取模型资产，支持中断后继续，并验证每个分片和完整文件的大小与 SHA-256。
 4. 配置完成后双击 `Start-ME5412.cmd`。浏览器打开本机 `http://127.0.0.1:18766/`；搜索、翻译、问答和模型请求均留在本机。
 
-首次模型配置需要网络；完成后可断开网络继续使用。模型文件较大，请预留至少 20 GB 可用磁盘空间和 16 GB 内存；当前 `qwen3:8b` 与 `qwen3-vl:4b-instruct` 两个模型的去重后合计下载量约 8.5 GB，确切大小以发布清单为准。视觉模型是否随包配置以最终清单为准。模型生成的答案仍需结合课件原文核对，离线运行不等于答案一定正确。
+首次模型配置需要网络；完成后可断开网络继续使用。模型文件较大，请预留至少 12 GB 可用磁盘空间和 16 GB 内存。单模型版本使用 `qwen3:8b`，负责课件问答和离线翻译；图片识字功能已移除。发布包的结构、清单和下载校验已检查；构建机因可用提交内存不足，未完成完整 8B 生成压力测试，因此不能保证所有硬件上的 AI 推理表现。模型生成的答案仍需结合课件原文核对。
 
 完整的新手步骤、断点续传、端口和安全排查见 [`docs/userguide.md`](docs/userguide.md)。
 

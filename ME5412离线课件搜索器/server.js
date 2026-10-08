@@ -2,7 +2,7 @@
 'use strict';
 const http=require('http'),fs=require('fs'),path=require('path'),cp=require('child_process'),{search,selectPassages}=require('./search');
 const envPort=(name,fallback)=>{const value=Number(process.env[name]||fallback);return Number.isInteger(value)&&value>0&&value<65536?value:fallback};
-const HOST='127.0.0.1',PORT=envPort('PORT',18765),OLLAMA_HOST=process.env.ME5412_OLLAMA_HOST||'127.0.0.1',OLLAMA_PORT=envPort('ME5412_OLLAMA_PORT',11434),QA_MODEL=process.env.QA_MODEL||'qwen3:8b',VISION_MODEL=process.env.VISION_MODEL||'qwen3-vl:4b-instruct',TRANSLATION_MODEL=process.env.TRANSLATION_MODEL||'qwen3:8b';
+const HOST='127.0.0.1',PORT=envPort('PORT',18765),OLLAMA_HOST=process.env.ME5412_OLLAMA_HOST||'127.0.0.1',OLLAMA_PORT=envPort('ME5412_OLLAMA_PORT',11434),MODEL=process.env.ME5412_MODEL||'qwen3:8b',QA_MODEL=MODEL,TRANSLATION_MODEL=MODEL;
 let data;try{data=JSON.parse(fs.readFileSync(path.join(__dirname,'index.json'),'utf8'))}catch{}
 const notesRoot=path.resolve(data?.folder||'', '笔记版课件');
 const isNotesFile=file=>{const filePath=path.resolve(String(file?.path||''));return !!data?.folder&&filePath.startsWith(notesRoot+path.sep)};
@@ -256,7 +256,6 @@ if(structuredSingle||structuredMulti){
   }catch(e){return send(r,502,JSON.stringify({error:'离线模型返回的结构化结果无效：'+e.message,model:QA_MODEL}))}
 }if(!answer)return send(r,502,JSON.stringify({error:'离线模型返回空答案',model:QA_MODEL}));
 return send(r,200,JSON.stringify({answer,sources,model:QA_MODEL+'（课件推理）',debug:{multi,stem,closedExplicitList}}))}
-if(q.method==='POST'&&u.pathname==='/api/vision'){const b=await readJson(q),image=String(b.image||'').replace(/^data:image\/[^;]+;base64,/,'');if(!/^[A-Za-z0-9+/=\r\n]+$/.test(image)||image.length<20)return send(r,400,JSON.stringify({error:'图片无效'}));const x=await ollama({model:VISION_MODEL,stream:false,keep_alive:'30m',options:{temperature:.05,num_ctx:4096},messages:[{role:'user',content:String(b.prompt||'准确识别全部文字并解释图片内容。').slice(0,2000),images:[image]}]});return send(r,200,JSON.stringify({answer:x.message?.content||'',model:VISION_MODEL}))}
 return send(r,404,'not found','text/plain')}catch(e){const timedOut=e.message==='模型响应超时'||e.message==='请求已取消';send(r,timedOut?504:500,JSON.stringify({error:timedOut?'本地模型处理超时或请求已取消，请重试':e.message||'服务器错误'}))}});
 server.on('error',e=>{console.error(e.message);process.exitCode=1});
 server.listen(PORT,HOST,()=>{const url='http://'+HOST+':'+PORT+'/';console.log('ME5412 Offline AI Search: '+url);if(process.argv.includes('--open')){const win=process.platform==='win32';try{cp.spawn(win?'cmd.exe':process.platform==='darwin'?'open':'xdg-open',win?['/d','/c','start','',url]:[url],{detached:true,stdio:'ignore'}).unref()}catch{}}});

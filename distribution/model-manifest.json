@@ -1,0 +1,148 @@
+{
+  "format": 1,
+  "createdAt": "2026-10-08T13:24:05.4672712Z",
+  "partSize": 1900000000,
+  "sources": [
+    {
+      "alias": "source-a",
+      "root": "source-a"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "metadata/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f.json",
+      "sha256": "664010f3c24c1b58777da3500a20e19fa60c5b4474ed8d9bd849391afe7083ef",
+      "size": 5567,
+      "kind": "metadata",
+      "backupPath": "metadata/source-a/metadata/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f.json"
+    }
+  ],
+  "files": [
+    {
+      "source": "source-a",
+      "relativePath": "blobs/sha256-05a61d37b08453e59290add468e3bb2f688e23a01e967fecb0e2fa41218cea76",
+      "sha256": "05a61d37b08453e59290add468e3bb2f688e23a01e967fecb0e2fa41218cea76",
+      "size": 487,
+      "kind": "blob"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "blobs/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f",
+      "sha256": "a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f",
+      "size": 5225374496,
+      "kind": "blob"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "blobs/sha256-ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4",
+      "sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4",
+      "size": 1723,
+      "kind": "blob"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "blobs/sha256-cff3f395ef3756ab63e58b0ad1b32bb6f802905cae1472e6a12034e4246fbbdb",
+      "sha256": "cff3f395ef3756ab63e58b0ad1b32bb6f802905cae1472e6a12034e4246fbbdb",
+      "size": 120,
+      "kind": "blob"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "blobs/sha256-d18a5cc71b84bc4af394a31116bd3932b42241de70c77d2b76d69a314ec8aa12",
+      "sha256": "d18a5cc71b84bc4af394a31116bd3932b42241de70c77d2b76d69a314ec8aa12",
+      "size": 11338,
+      "kind": "blob"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "manifests/registry.ollama.ai/library/qwen3/8b",
+      "sha256": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "size": 859,
+      "kind": "metadata",
+      "backupPath": "metadata/source-a/manifests/registry.ollama.ai/library/qwen3/8b"
+    },
+    {
+      "source": "source-a",
+      "relativePath": "metadata/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f.json",
+      "sha256": "664010f3c24c1b58777da3500a20e19fa60c5b4474ed8d9bd849391afe7083ef",
+      "size": 5567,
+      "kind": "metadata",
+      "backupPath": "metadata/source-a/metadata/sha256-a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f.json"
+    }
+  ],
+  "blobs": [
+    {
+      "sha256": "05a61d37b08453e59290add468e3bb2f688e23a01e967fecb0e2fa41218cea76",
+      "size": 487,
+      "parts": [
+        {
+          "name": "part001.bin",
+          "size": 487,
+          "sha256": "05a61d37b08453e59290add468e3bb2f688e23a01e967fecb0e2fa41218cea76"
+        }
+      ],
+      "path": "blobs/05a61d37b08453e59290add468e3bb2f688e23a01e967fecb0e2fa41218cea76"
+    },
+    {
+      "sha256": "a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f",
+      "size": 5225374496,
+      "parts": [
+        {
+          "name": "part001.bin",
+          "size": 1900000000,
+          "sha256": "dfce8c1af813d1d6386b7d9d735300255bfaa3943796577c5764a59bc6c5eef3"
+        },
+        {
+          "name": "part002.bin",
+          "size": 1900000000,
+          "sha256": "a25da73d56d753efe97430da514a4cdc78063d2d37dad0c1076e13874d6f4380"
+        },
+        {
+          "name": "part003.bin",
+          "size": 1425374496,
+          "sha256": "2a951fc16abfbe2063d71c6d5ad193c1cafdd41fe0184d3eb326d46888910698"
+        }
+      ],
+      "path": "blobs/a3de86cd1c132c822487ededd47a324c50491393e6565cd14bafa40d0b8e686f"
+    },
+    {
+      "sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4",
+      "size": 1723,
+      "parts": [
+        {
+          "name": "part001.bin",
+          "size": 1723,
+          "sha256": "ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4"
+        }
+      ],
+      "path": "blobs/ae370d884f108d16e7cc8fd5259ebc5773a0afa6e078b11f4ed7e39a27e0dfc4"
+    },
+    {
+      "sha256": "cff3f395ef3756ab63e58b0ad1b32bb6f802905cae1472e6a12034e4246fbbdb",
+      "size": 120,
+      "parts": [
+        {
+          "name": "part001.bin",
+          "size": 120,
+          "sha256": "cff3f395ef3756ab63e58b0ad1b32bb6f802905cae1472e6a12034e4246fbbdb"
+        }
+      ],
+      "path": "blobs/cff3f395ef3756ab63e58b0ad1b32bb6f802905cae1472e6a12034e4246fbbdb"
+    },
+    {
+      "sha256": "d18a5cc71b84bc4af394a31116bd3932b42241de70c77d2b76d69a314ec8aa12",
+      "size": 11338,
+      "parts": [
+        {
+          "name": "part001.bin",
+          "size": 11338,
+          "sha256": "d18a5cc71b84bc4af394a31116bd3932b42241de70c77d2b76d69a314ec8aa12"
+        }
+      ],
+      "path": "blobs/d18a5cc71b84bc4af394a31116bd3932b42241de70c77d2b76d69a314ec8aa12"
+    }
+  ],
+  "model": "qwen3:8b",
+  "note": "Filtered public model backup containing only qwen3:8b files."
+}
+
+

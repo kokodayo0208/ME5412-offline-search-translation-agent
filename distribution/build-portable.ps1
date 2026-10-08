@@ -33,6 +33,7 @@ Copy-Item (Join-Path $PSScriptRoot "setup-model.mjs") (Join-Path $dest "scripts\
 Copy-Item (Join-Path $PSScriptRoot "setup-model.cmd") (Join-Path $dest "setup-model.cmd")
 Copy-Item (Join-Path $PSScriptRoot "extract-portable.ps1") (Join-Path $dest "extract-portable.ps1")
 Copy-Item (Join-Path $PSScriptRoot "model-release.json") (Join-Path $dest "model-release.json")
+Copy-Item (Join-Path $PSScriptRoot "model-manifest.json") (Join-Path $dest "model-manifest.json")
 Copy-Item (Join-Path $PSScriptRoot "README.md") (Join-Path $dest "README.md")
 Copy-Item (Join-Path $PSScriptRoot "NODE-RUNTIME-NOTICE.txt") (Join-Path $dest "runtime\node\NODE-RUNTIME-NOTICE.txt")
 

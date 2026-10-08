@@ -20,4 +20,6 @@ Run `Start-ME5412.cmd` in the staged package. It uses only `runtime\node\node.ex
 
 `setup-model.cmd` invokes the bundled Node runtime and `setup-model.mjs`. The script accepts a local manifest or the package's `model-release.json`, talks only to GitHub release/API/CDN hosts, resumes safely, refuses to overwrite different files, and verifies every downloaded part and completed blob. It never uses npm, `ollama pull`, or a general web page.
 
-Model weights are intentionally not staged by this repository builder. The public release manifest and asset map are the source of truth; setup downloads each part directly into the package-local model store and removes owned temporary files after verification.
+The distribution uses one text model for AI routes: `qwen3:8b`. It handles course Q&A and offline translation. Image OCR is intentionally not included. The model is not committed to Git; `setup-model.cmd` downloads the filtered `qwen3:8b` assets from the public GitHub backup release (about 5.23 GB total) directly into the package-local model store and verifies every part. No other model is downloaded.
+
+The final text-only package is `ME5412-portable-win-x64-v1.1.0.zip` (1,938,371,859 bytes; SHA-256 `C6ADB51268C61277085C524A737738D6406F6EF20F26CAAA49A44B74CE9A94F7`). The package and model setup were structurally checked. Full AI generation was not completed on the build machine because available commit memory was below the safe 8B test threshold; do not interpret the package as a hardware-independent inference guarantee.
