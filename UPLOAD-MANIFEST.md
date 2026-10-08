@@ -1,6 +1,8 @@
 # Upload manifest
 
-Prepared 2026-10-08 from the existing workspace. Paths are repository-relative; sizes are bytes; hashes are SHA-256. This is the intended private upload set. Generated indexes, logs, dependency trees, temporary renders, and model weights are excluded by design.
+Prepared 2026-10-08 from the existing workspace. Paths are repository-relative; sizes are bytes; hashes are SHA-256. This is the intended public upload set. Generated indexes, logs, dependency trees, temporary renders, and model weights are excluded from Git by design (the model and project snapshots are provided separately as release assets).
+
+The included NUS course slides, assignment material, and other third-party content retain their original ownership and license terms; this manifest does not grant redistribution rights. Model assets retain their upstream metadata and applicable licenses (including Apache License 2.0 where stated). No blanket MIT license is asserted for the repository contents.
 
 ## Included files
 
